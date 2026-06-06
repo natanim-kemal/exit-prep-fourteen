@@ -52,4 +52,4 @@ Each day contains 4 files:
 ---
 
 ⭐ **Star this repo if you find it useful — helps other students discover it!**  
-📤 **Share this material with classmates preparing for the exit exam — the更多人 who benefit, the better!**
+📤 **Share this material with classmates preparing for the exit exam — the more people who benefit, the better!**
