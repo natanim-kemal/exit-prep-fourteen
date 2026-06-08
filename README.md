@@ -1,4 +1,4 @@
-# Software Engineering & Computing Technology — National Exit Examination Preparation
+# Software Engineering & Computing Technology — 14 days National Exit Exam Prep Material
 
 Study materials for the **National Exit Exam** covering **13 common core courses** with **100 exam items**. Based on previous exit exams, model exams from AAU, BDU, AASTU, and other sources.
 
