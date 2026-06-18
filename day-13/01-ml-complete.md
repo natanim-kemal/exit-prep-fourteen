@@ -1,103 +1,223 @@
-# Machine Learning — Study Notes
+# Day 13 — Machine Learning Complete Theory (6 Items)
 
-## 1. Types of Machine Learning
+## LO1: ML Fundamentals — Supervised vs Unsupervised
 
-**Supervised Learning**: learns from labeled data (input-output pairs).
-- **Goal**: predict output for new inputs
-- **Examples**: classification (spam detection, image recognition), regression (price prediction)
-- **Best for**: Email spam detection (Classification), demand forecasting (Time-Series/Regression)
+### 1.1 What is Machine Learning?
+- ML: algorithms that improve performance through experience (data)
+- System learns patterns from data without being explicitly programmed for every rule
 
-**Unsupervised Learning**: discovers patterns from unlabeled data.
-- **Goal**: find hidden structure in data
-- **Examples**: clustering (customer segmentation), association rule mining, dimensionality reduction
+### 1.2 ML Types (Exam Priority!)
+| Type | Labeled Data? | Goal | Examples |
+|------|:------------:|------|----------|
+| **Supervised Learning** | **Yes** | Learn mapping from input to output | Classification, Regression |
+| **Unsupervised Learning** | **No** | Discover hidden patterns/structure | Clustering, Association |
+| **Reinforcement Learning** | No (rewards) | Learn optimal actions via rewards | Game AI, Robotics |
+| **Transfer Learning** | Varies | Apply knowledge from one task to another | Pre-trained models |
 
-**Semi-Supervised Learning**: combines small labeled data with large unlabeled data.
+**Supervised Learning**:
+- Training data includes input-output pairs (labeled)
+- **Classification**: predict discrete class (spam/not spam, dog/cat)
+- **Regression**: predict continuous value (price, temperature)
 
-**Reinforcement Learning**: agent learns by interacting with environment, receiving rewards/penalties.
-- **Goal**: maximize cumulative reward
-- **Examples**: game playing (AlphaGo), robotics, autonomous driving
+**Unsupervised Learning**:
+- Training data has **no labels**
+- **Clustering**: group similar items (k-means, hierarchical)
+- **Association**: find relationships between variables (market basket)
 
-## 2. Key Algorithms
+### 1.3 Reinforcement Learning
+- Agent learns by interacting with environment
+- Receives **rewards** or **punishments** for actions
+- Goal: maximize cumulative reward
+- **Q-learning**: popular RL algorithm
 
-### Classification
-- **Logistic Regression**: binary classification (despite name, it's for classification)
-- **Decision Trees**: tree-like structure for decisions; easy to interpret but prone to overfitting
-- **Random Forest**: ensemble of decision trees; reduces overfitting
-- **SVM (Support Vector Machine)**: finds optimal hyperplane to separate classes
-- **k-NN (k-Nearest Neighbors)**: classifies based on majority of k nearest neighbors
+---
 
-### Regression
-- **Linear Regression**: models linear relationship between variables
-- **Polynomial Regression**: models non-linear relationships
-- **Ridge/Lasso Regression**: regularized linear regression to prevent overfitting
+## LO2: Overfitting, Underfitting & Model Development
 
-### Clustering
-- **k-Means**: partitions data into k clusters; simple and fast
-- **Hierarchical Clustering**: builds tree of clusters (agglomerative/divisive)
-- **DBSCAN**: density-based clustering; handles noise
+### 2.1 Overfitting (Exam Priority!)
+- Model fits training data **too closely**
+- **Captures noise** instead of underlying pattern
+- Works **well on training data, poorly on new/unseen data**
+- Causes: too complex model, too little training data, training too long
 
-## 3. Model Evaluation Metrics
+### 2.2 Underfitting
+- Model is **too simple** to capture underlying structure
+- Works **poorly on both training and test data**
+- Causes: too simple model, insufficient features, wrong algorithm
 
-**For Classification**:
-- **Accuracy**: (TP+TN)/(TP+TN+FP+FN) — overall correctness
-- **Precision**: TP/(TP+FP) — how many positive predictions are correct
-- **Recall (Sensitivity)**: TP/(TP+FN) — how many actual positives were found
-- **F1-Score**: harmonic mean of precision and recall
-- **Confusion Matrix**: TP, TN, FP, FN
+### 2.3 Bias-Variance Tradeoff
+- **Bias**: error from overly simplistic assumptions (underfitting)
+- **Variance**: error from sensitivity to small fluctuations (overfitting)
+- Goal: balance between bias and variance
 
-**For Regression**:
-- **MSE (Mean Squared Error)**: average of squared errors
-- **MAE (Mean Absolute Error)**: average of absolute errors
-- **R² (R-squared)**: proportion of variance explained
+### 2.4 Model Development Best Practices
+| Practice | Correct | Incorrect |
+|----------|---------|-----------|
+| Dataset size | **Large dataset boosts performance** ✓ | Small dataset is fine |
+| Train/Test split | **Training > Test set** (70-80% train) | Training < Test set |
+| Overlap | **No overlap** between train and test | Fifty-fifty overlap ✗ |
+| Focus | Focus on training data quality | More focus on test data ✗ |
 
-## 4. Overfitting & Underfitting
+### 2.5 Data Mining Process
+**Training → Testing → Evaluation → Deployment**
+1. Train model on training data
+2. Test model on unseen test data
+3. Evaluate performance using metrics
+4. Deploy to production
 
-**Overfitting**: model performs well on training data but poorly on new data.
-- **Causes**: too complex model, too many features, insufficient training data
-- **Solutions**: regularization (L1/L2), more data, feature selection, cross-validation, early stopping
+---
 
-**Underfitting**: model performs poorly on both training and test data.
-- **Causes**: too simple model, insufficient features
-- **Solutions**: increase model complexity, add features, reduce regularization
+## LO3: Evaluation Metrics
 
-**Bias-Variance Tradeoff**:
-- **High bias** → underfitting (model too simple)
-- **High variance** → overfitting (model too complex)
+### 3.1 Confusion Matrix (for Classification)
+```
+              Actual Positive    Actual Negative
+Predicted +        TP                FP
+Predicted -        FN                TN
+```
 
-## 5. Ensemble Learning
+### 3.2 Key Metrics
+| Metric | Formula | What it measures |
+|--------|---------|-----------------|
+| **Accuracy** | (TP+TN)/(TP+TN+FP+FN) | Overall correctness |
+| **Precision** | TP/(TP+FP) | How many predicted positives are actually positive |
+| **Recall** | TP/(TP+FN) | How many actual positives were found |
+| **F1-Score** | 2×(P×R)/(P+R) | Harmonic mean of precision and recall |
 
-Combines multiple models to produce better results.
+### 3.3 Precision vs Recall (From Exam)
+- **Precision**: genuine defective segments / total predicted as defective = TP/(TP+FP)
+- **Recall**: genuine defective segments / total actual defective = TP/(TP+FN)
 
-**Bagging (Bootstrap Aggregating)**: train models in parallel on different data subsets; reduces variance (Random Forest).
+### 3.4 ROC & AUC
+- **ROC curve**: plots TPR vs FPR at various thresholds
+- **AUC**: area under ROC curve — higher = better model
 
-**Boosting**: train models sequentially, each correcting previous errors; reduces bias (AdaBoost, Gradient Boosting, XGBoost).
+---
 
-**Stacking**: combine different model types using a meta-learner.
+## LO4: ML Algorithms
 
-## 6. Key Concepts
+### 4.1 Common Supervised Algorithms
+| Algorithm | Type | Description |
+|-----------|------|-------------|
+| **Linear Regression** | Regression | Models linear relationship |
+| **Logistic Regression** | Classification | Binary classification (despite name) |
+| **Decision Tree** | Both | Tree of decisions based on features |
+| **k-NN** (k-Nearest Neighbors) | Both | Classifies based on nearest neighbors |
+| **SVM** (Support Vector Machine) | Both | Finds optimal separating hyperplane |
+| **Naive Bayes** | Classification | Based on Bayes' theorem with independence assumption |
 
-**Gradient Descent**: iterative optimization algorithm to minimize loss function. Variants: Batch GD, Stochastic GD (SGD), Mini-batch GD.
+### 4.2 Common Unsupervised Algorithms
+| Algorithm | Type | Description |
+|-----------|------|-------------|
+| **k-Means** | Clustering | Partitions into k clusters based on distance |
+| **Hierarchical Clustering** | Clustering | Builds tree of clusters |
+| **PCA** (Principal Component Analysis) | Dimensionality Reduction | Reduces feature space |
+| **Association Rule** | Association | Finds frequent itemsets (market basket) |
 
-**Feature Engineering**: creating/selecting informative features from raw data.
+---
 
-**Word2Vec**: produces dense vector representations of words (word embeddings) — captures semantic meaning.
+## LO5: Ensemble Learning & Optimization (Exam Priority!)
 
-**TF-IDF**: measures term importance in a document relative to a corpus; widely used for text feature extraction.
+### 5.1 Ensemble Learning
+Combines multiple models to improve performance
 
-**Normalization/Batch Normalization**: normalizing layer inputs to stabilize and accelerate training.
+| Technique | Description | Type |
+|-----------|-------------|------|
+| **Bagging** | Train multiple models on different bootstrap samples, average predictions | Ensemble ✓ |
+| **Boosting** | Train models sequentially, each focuses on previous errors | Ensemble ✓ |
+| **Random Forest** | Ensemble of decision trees using bagging + random feature selection | Ensemble ✓ |
+| **Lasso (L1 Regularization)** | Adds penalty = λ∑|wᵢ| to cost function — **NOT ensemble** | Regularization |
 
-**Train/Test Split**: typically 70-80% training, 20-30% testing. Never overlap train/test data.
+**Lasso is NOT a type of ensemble learning** — it's a regularization technique!
 
-## 7. Association Rule Mining
+### 5.2 Gradient Descent
+- **Model optimization technique** ✓
+- Iteratively adjusts parameters to minimize cost function
+- Variants: Batch GD, Stochastic GD (SGD), Mini-batch GD
+- Learning rate controls step size
 
-**Technique**: finds relationships between items in large datasets (market basket analysis).
+### 5.3 Regularization
+| Technique | Description |
+|-----------|-------------|
+| **L1 (Lasso)** | Adds absolute value penalty; produces sparse models |
+| **L2 (Ridge)** | Adds squared penalty; shrinks coefficients evenly |
+| **Elastic Net** | Combines L1 and L2 |
 
-**Metrics**: Support (frequency), Confidence (conditional probability), Lift (strength beyond random).
+---
 
-**Example**: {diapers} → {beer} — people who buy diapers are likely to buy beer.
+## LO6: Association Rules & Big Data Analytics
 
-## 8. Time-Series Forecasting
+### 6.1 Association Rule Mining
+- Finds relationships between items in transactional data
+- **Market Basket Analysis**: "people who buy X also buy Y"
+- Key metrics: Support, Confidence, Lift
+- **Apriori algorithm**: finds frequent itemsets
 
-Predicts future values based on historical time-ordered data. Used for demand forecasting, stock prices, weather prediction.
+### 6.2 Association Rule Example (From AAU 2015)
+"People who buy shoes also buy socks with 0.75 probability" → **Association rule** technique
 
-**Methods**: ARIMA, SARIMA, Exponential Smoothing, LSTM (deep learning).
+---
+
+## Exam-Style Q&A (From 10 Actual Model Exam Questions)
+
+**Q1:** One of the following is a model optimization technique?
+- a. Bagging
+- b. Lasso
+- c. Gradient boosting
+- d. **Gradient descent** ✓
+
+**Q2:** Model fits too closely to training data, works poorly on new data?
+- a. **Overfitting** ✓
+- b. Underfitting
+- c. Underperforming
+- d. Sweet spot
+
+**Q3:** In software testing, genuine defective segments / total predicted as faulty = ?
+- a. **Precision** ✓
+- b. Recall
+- c. F-measure
+- d. Accuracy
+
+**Q4:** Which is NOT a type of ensemble learning?
+- a. Bagging
+- b. **Lasso** ✓ (Lasso = regularization, not ensemble)
+- c. Random forest
+- d. Boosting
+
+**Q5:** Which learning algorithm is for data without labels?
+- a. Transfer learning
+- b. Supervised learning
+- c. **Unsupervised learning** ✓
+- d. Reinforcement learning
+
+**Q6:** True about ML model development?
+- a. More focus on test data
+- b. **Large dataset boosts performance** ✓
+- c. 50/50 overlap train/test
+- d. Training proportion < test
+
+**Q7:** Correct data mining process?
+- a. **Training → Testing → Evaluation → Deployment** ✓
+- b. Evaluation → Training → Testing → Deployment
+- c. Training → Testing → Deployment → Evaluation
+- d. Training → Evaluation → Testing → Deployment
+
+**Q8:** People who buy shoes also buy socks → which analytics technique?
+- a. Regression Modeling
+- b. Clustering algorithm
+- c. Predictive modeling
+- d. **Association rule** ✓
+
+---
+
+## Quick Reference — Blueprint LOs
+
+| LO | Topic | Items |
+|----|-------|-------|
+| 1 | Supervised vs Unsupervised learning | — |
+| 2 | Overfitting, underfitting, model development | — |
+| 3 | Evaluation metrics (precision, recall, accuracy, F1) | — |
+| 4 | ML algorithms (classification, regression, clustering) | — |
+| 5 | Ensemble learning & gradient descent | — |
+| 6 | Association rules | — |
+| **Total** | | **6** |

@@ -1,147 +1,803 @@
-# Fundamentals of Programming — Study Notes
+# Day 1 — Fundamentals of Programming (14 Items)
 
-## 1. Variables & Data Types
+## 1. Variables, Data Types & Naming
 
-Variables store data in memory. Each variable has a name, type, and value. Common primitive types are `int` (integer), `float` (decimal), `char` (single character), `bool` (true/false), and `string` (text). In strongly-typed languages like C++/Java, you must declare the type before use.
+### Valid Identifiers
+- Must start with letter, underscore `_`, or dollar sign `$`
+- Cannot start with digit
+- Case-sensitive
+- Reserved keywords cannot be used
 
-**Variable naming rules:** Must start with a letter or underscore, cannot start with a digit, case-sensitive, cannot use reserved keywords. Example: `myVar`, `_count` (valid); `2fast`, `try` (invalid).
+**Valid:** `variable_123`, `$money`, `_name`, `fullName`
+**Invalid:** `7variable`, `try` (keyword), `full-name` (hyphen)
 
-**Constants** are declared with `const` keyword and cannot change after initialization: `const float PI = 3.14;`
+### Primitive Data Types (Java)
+| Type | Size | Range |
+|------|------|-------|
+| byte | 1 B | -128 to 127 |
+| short | 2 B | -32,768 to 32,767 |
+| int | 4 B | -2^31 to 2^31-1 |
+| long | 8 B | -2^63 to 2^63-1 |
+| float | 4 B | ±3.4e-38 to ±3.4e+38 |
+| double | 8 B | ±1.7e-308 to ±1.7e+308 |
+| char | 2 B | 0 to 65,535 |
+| boolean | 1 bit | true/false |
 
-**Scope** determines where a variable is accessible:
-- **Local**: declared inside a function, accessible only within that function (stored on stack)
-- **Global**: declared outside all functions, accessible throughout the program
-- **Block**: declared inside a block `{}`, accessible only within that block
-- Variable shadowing occurs when a local variable hides a global variable within its scope
+### Python Variables
+- Dynamic typing — no type declaration needed
+- `x = 5` automatically assigns int type
+- `type(x)` returns `<class 'int'>`
+- Multiple assignment: `a, b, c = 1, 2, 3`
 
-## 2. Operators
+### Type Casting Deep Dive
 
-**Arithmetic**: `+`, `-`, `*`, `/`, `%` (modulo — returns remainder of division). Precedence: `*`, `/`, `%` before `+`, `-`.
+**Widening (Implicit)** — safe, no data loss
+```java
+int i = 100;
+long l = i;        // int → long (OK)
+float f = l;       // long → float (OK, possible precision loss but allowed)
+double d = f;      // float → double (OK)
+```
 
-**Relational**: `==`, `!=`, `<`, `>`, `<=`, `>=` — compare values, return boolean.
+**Narrowing (Explicit)** — possible data loss, must cast
+```java
+double d = 100.5;
+int i = (int) d;               // 100 (truncated)
+byte b = (byte) 300;            // 44 (300 mod 256 = 44, overflow!)
+```
 
-**Logical**: `&&` (AND), `||` (OR), `!` (NOT). Short-circuit evaluation means second operand is not evaluated if the first already determines the result.
+**Integer Promotion**: In expressions, `byte`, `short`, `char` are promoted to `int`:
+```java
+byte a = 10, b = 20;
+byte c = a + b;                 // ERROR: a+b is int, needs cast
+byte c = (byte)(a + b);         // OK
+```
 
-**Assignment**: `=`, `+=`, `-=`, `*=`, `/=` — assign or modify a variable.
+**Type conversion in Python:**
+```python
+int(3.14)           # 3 (truncation)
+float("10.5")       # 10.5
+str(42)             # "42"
+int("1010", 2)      # 10 (binary to decimal)
+int(float("10.0"))  # 10 (string → float → int)
+```
 
-**Bitwise**: `&` (AND), `|` (OR), `^` (XOR), `~` (NOT/flip bits), `<<` (left shift), `>>` (right shift). XOR of 5^3 = 6 (101 ^ 011 = 110).
+### Wrapper Classes & Autoboxing
 
-**Increment/Decrement**: `++i` (pre-increment: increment before use), `i++` (post-increment: use then increment).
+| Primitive | Wrapper |
+|-----------|---------|
+| `int` | `Integer` |
+| `double` | `Double` |
+| `boolean` | `Boolean` |
+| `char` | `Character` |
 
-**Ternary**: `condition ? value_if_true : value_if_false` — takes 3 operands.
+```java
+Integer x = 5;               // autoboxing: int → Integer
+int y = x;                   // unboxing: Integer → int
+Integer z = Integer.valueOf(10);  // explicit boxing
+int w = Integer.parseInt("42");   // string to int
+```
 
-**sizeof()**: returns memory size of a type/variable in bytes. `int` is typically 4 bytes on 32-bit systems.
+---
 
-## 3. Control Flow
+## 2. Operators & Precedence
 
-### Selection
-- **if-else**: executes code based on condition
-- **switch-case**: multi-way branch; without `break`, execution falls through to the next case
+### Arithmetic Operators
+| Operator | Meaning |
+|----------|---------|
+| `+` | Addition |
+| `-` | Subtraction |
+| `*` | Multiplication |
+| `/` | Division (float) |
+| `//` | Integer division (Python) |
+| `%` | Modulus |
+| `**` | Exponentiation (Python) |
 
-### Loops
-- **for**: best when iteration count is known in advance: `for(initialization; condition; increment)`
-- **while**: condition is checked BEFORE the body executes
-- **do-while**: guarantees at least one execution (condition checked AFTER body)
-- **foreach**: iterates over collections
+### Increment/Decrement (Java)
+```java
+int a = 4;
+++a * 5    // prefix: a becomes 5, then 5*5 = 25
+a++ * 5    // postfix: uses 4*5 = 20, then a becomes 5
+```
 
-**Infinite loop**: occurs when loop condition never becomes false: `while(true){}`
+### Operator Precedence (highest to lowest)
+1. Parentheses `()`
+2. Unary `++`, `--`, `+`, `-`, `!`, `not`
+3. Multiplicative `*`, `/`, `%`, `//`
+4. Additive `+`, `-`
+5. Relational `<`, `>`, `<=`, `>=`
+6. Equality `==`, `!=`
+7. Logical AND `&&`, `and`
+8. Logical OR `||`, `or`
+9. Assignment `=`, `+=`, etc.
 
-**Jump statements**: `break` (exits loop immediately), `continue` (skips rest of current iteration), `return` (exits function). `loop` is NOT a valid jump statement.
+**Python example with precedence:**
+```python
+x = 5 * 2 + 3 // 4 + 10 ** 2
+# 10 + 0 + 100 = 110
+```
 
-## 4. Functions
+**Boolean logic:**
+```python
+x = not 2 + 3 == 5 or 5 + 2 <= 7 and 7 + 8 == 15
+# not (5 == 5) or (7 <= 7) and (15 == 15)
+# not True or True and True
+# False or True = True
+```
 
-A function is a reusable block of code. Key concepts:
+### Short-Circuit Evaluation
+- `&&` / `and`: if left operand is `false`, right is **not evaluated**
+- `||` / `or`: if left operand is `true`, right is **not evaluated**
 
-**Declaration vs Definition**: Declaration states the function's signature (return type, name, parameters). Definition provides the body. A **prototype** declares the function before its first use.
+```java
+int x = 5, y = 0;
+if (y != 0 && x / y > 1) { }     // safe: y!=0 is false, never evaluates x/y
+if (y == 0 || x / y > 1) { }      // UNSAFE: y==0 is true, but x/y still evaluated!
+```
 
-**Parameters**:
-- **Pass-by-value**: a copy of the argument is passed; original is not modified
-- **Pass-by-reference**: modifies the original variable
-- **Default parameters**: have default values if argument not provided
+### Bitwise Operators
 
-**Overloading**: same function name but different parameters (number or type). Cannot overload by return type alone.
+| Operator | Meaning | Example | Result |
+|----------|---------|---------|--------|
+| `&` | AND | `5 & 3` | `1` (101 & 011 = 001) |
+| `\|` | OR | `5 \| 3` | `7` (101 \| 011 = 111) |
+| `^` | XOR | `5 ^ 3` | `6` (101 ^ 011 = 110) |
+| `~` | NOT | `~5` | `-6` (inverts all bits) |
+| `<<` | Left shift | `5 << 1` | `10` (×2) |
+| `>>` | Right shift | `5 >> 1` | `2` (÷2) |
+| `>>>` | Unsigned right shift | `-1 >>> 1` | `2147483647` |
 
-**Return types**: `void` means returns nothing; `int` returns an integer value.
+**Exam note**: `>>` preserves sign bit, `>>>` shifts zero into sign bit.
 
-**`return` statement**: sends a value back to the caller in a non-void function.
+---
 
-**Multiple return values** can be achieved using structs or tuples.
+## 3. Control Structures
 
-## 5. Recursion
+### if-else (Java)
+```java
+if (condition) {
+    // code
+} else if (otherCondition) {
+    // code
+} else {
+    // code
+}
+```
 
-A function that calls itself. Requires two components:
-1. **Base case**: stops the recursion (e.g., `factorial(0) = 1`, `factorial(1) = 1`)
-2. **Recursive case**: function calls itself with modified parameters
+### switch (Java)
+```java
+switch (value) {
+    case 1:
+        // code
+        break;    // without break, falls through
+    case 2:
+        // code
+        break;
+    default:
+        // code
+}
+```
+**Without break** → all subsequent cases execute (fall-through).
 
-**Call stack**: each recursive call pushes a new frame onto the stack. Recursion depth is limited by call stack size — too many calls cause stack overflow.
+### switch with String (Java 7+)
+```java
+String day = "Monday";
+switch (day) {
+    case "Monday":   System.out.println("Start of week"); break;
+    case "Friday":   System.out.println("End of week"); break;
+    default:         System.out.println("Mid-week");
+}
+```
 
-Example: `factorial(3)` = 3 × 2 × 1 = 6.
+### Enhanced switch arrow syntax (Java 14+)
+```java
+switch (day) {
+    case "Monday", "Tuesday" -> System.out.println("Early week");
+    case "Friday" -> System.out.println("Weekend near");
+    default -> System.out.println("Other day");
+}
+```
 
-A recursive function with no base case causes infinite recursion (stack overflow).
+### for Loop
+```java
+for (initialization; condition; increment/decrement) {
+    // body
+}
+// Example:
+for (int i = 0; i < args.length; i++) {
+    System.out.println(args[i]);
+}
+```
 
-## 6. Arrays & Strings
+### Enhanced for Loop (for-each)
+```java
+int[] numbers = {10, 20, 30, 40};
+for (int num : numbers) {
+    System.out.println(num);
+}
 
-### Arrays
-- **1D array**: contiguous memory locations of the same type: `int arr[5] = {1,2,3,4,5};`
-- **Indexing**: first element is at index 0, last at index (size-1). `arr[2]` accesses the 3rd element.
-- **Bounds**: accessing beyond array bounds causes undefined behavior (no automatic bounds check in C++)
-- **2D array**: conceptually an array of arrays, uses two indices
+List<String> names = Arrays.asList("A", "B", "C");
+for (String name : names) {
+    System.out.println(name);
+}
+```
+**Cannot** modify array indices in for-each (no index variable).
 
-### Vectors (C++ STL)
-- Dynamic array that resizes automatically: `vector<int> v;`
-- **push_back()**: adds element at the end
-- **pop_back()**: removes the last element
-- **size()**: returns number of elements
+### Variable Scope Rules
+```java
+public class ScopeDemo {
+    int instanceVar = 10;           // instance scope (entire class)
+    static int classVar = 20;       // class scope (shared)
+    
+    public void method(int param) { // parameter scope (method)
+        int localVar = 30;           // block scope (method)
+        if (true) {
+            int blockVar = 40;       // block scope (if-block only)
+            // can access: param, localVar, blockVar, instanceVar, classVar
+        }
+        // blockVar is OUT OF SCOPE here
+    }
+}
+```
+- **Local variables** must be initialized before use
+- **Shadowing**: local variable with same name as field hides the field
+- Use `this.field` to access shadowed instance field
 
-### Strings
-- **Concatenation**: joining two strings together (operator `+` in many languages)
-- `string` is NOT a primitive type in most languages (it's a class/object)
+### Python for loop
+```python
+for i in range(5):        # 0,1,2,3,4
+for i in range(2, 6):     # 2,3,4,5
+for i in range(0, 10, 2): # 0,2,4,6,8
 
-## 7. Pointers & Memory
+# Enumerate (get index + value)
+for index, value in enumerate(['a','b','c']):
+    print(index, value)    # 0 a, 1 b, 2 c
 
-- **Null pointer**: pointer to address 0 (nullptr/NULL)
-- **new**: dynamically allocates memory on heap, returns pointer
-- **delete**: frees dynamically allocated memory
-- **Memory leak**: allocated memory that is never freed
-- **`->` operator**: accesses a member of a struct via pointer
-- **Call stack**: memory structure that tracks active function calls (LIFO)
-- Local variables are stored on the **stack**
+# Zip (parallel iteration)
+for a, b in zip([1,2,3], ['x','y','z']):
+    print(a, b)            # 1 x, 2 y, 3 z
 
-## 8. File I/O
+# List comprehension
+squares = [x**2 for x in range(5)]        # [0,1,4,9,16]
+evens = [x for x in range(10) if x % 2 == 0]  # [0,2,4,6,8]
+```
 
-**File streams in C++**: `ifstream` (reading only), `ofstream` (writing only), `fstream` (both reading and writing).
+### while Loop
+```java
+while (condition) {
+    // body
+}
+```
 
-**File modes**: append mode (`ios::app`) adds data at the end without deleting existing content. Always check if file opened successfully before reading.
+### do-while Loop
+```java
+do {
+    // body — executes at least once
+} while (condition);
+```
 
-**Text vs Binary**: text files store human-readable characters; binary files store raw bytes.
+### break vs continue
+- **break** — exits loop immediately
+- **continue** — skips rest of current iteration, goes to next
 
-## 9. Program Development
+---
 
-**IPO (Input-Process-Output)**: documents what goes in, the processing steps, and what comes out. Used in program design.
+## 4. Arrays
 
-**Modular programming**: divides program into separate modules — main advantage is code reuse.
+### Java Arrays
+```java
+// Declaration + allocation
+int[] arr = new int[5];
+int arr[] = new int[5];
 
-**Pseudocode**: informal high-level description of an algorithm (not actual code).
+// Initialization
+int[] someArray = { 2, 13, 9, 11, 10 };
 
-**Testing**: finds and fixes defects before deployment. **Maintenance**: updates and fixes after release.
+// Access
+someArray[2]     // index 2 = 9
+someArray.length // = 5
 
-**Debugging**: finding and fixing errors in code. A **debugger** helps step through code to find bugs.
+// Iteration
+for (int i = 0; i <= arr.length - 2; ++i) {
+    System.out.println(arr[i] + ",");
+}
+```
 
-## 10. Error Types
-- **Syntax error**: violation of language grammar rules (caught by compiler)
-- **Runtime error**: occurs during execution (e.g., division by zero)
-- **Logical/Semantic error**: code runs but produces wrong output
-- **Compile-time error**: caught by compiler
+### Multidimensional Arrays
+```java
+int[][] twoD = new int[4][5];  // 4 rows, 5 cols
+int[][] matrix = { {1,2}, {3,4}, {5,6} };
+```
 
-## 11. Other Key Concepts
+### Python Lists (like arrays)
+```python
+programming = ['Software', 'Electrical', 'Civil']
+max(programming)  # 'Software' (alphabetically last)
 
-- **Modulo operator `%`**: returns remainder of division (7 % 3 = 1)
-- **Comments**: document code for humans; `//` for single-line, `/* */` for multi-line
-- **Enum**: defines named integer constants
-- **typedef**: creates an alias for a data type
-- **struct**: groups different data types together
-- **Header files (.h)**: contain declarations shared across files
-- **Storage classes**: `static` (persists between calls), `extern` (defined in another file), `register` (suggest CPU register), `auto` (default local)
-- **Swap without temp**: `a = a + b; b = a - b; a = a - b;`
-- **Binary search**: requires array to be sorted
-- **Linked list advantage** over array: dynamic size without reallocation
+# List slicing
+siTE = ['A', 'B', 'C', 'D']
+siTE[1:4] = ['E', 'F', 'G']
+# Result: ['A', 'E', 'F', 'G']
+
+# List operations
+len(list)    # length
+list[i]      # element at index i
+list.append(x)  # add to end
+```
+
+### Common Array Exceptions
+- `ArrayIndexOutOfBoundsException` — accessing index beyond bounds
+- `NullPointerException` — array variable not initialized
+
+---
+
+## 5. Strings
+
+### Java String Methods
+```java
+String s = "exercise";
+s.substring(3, 5);   // from index 3 to 5 (exclusive) → "rc"
+s.length();           // length
+s.charAt(i);          // character at index
+s.equals(other);      // compare content
+s.indexOf("rc");      // returns index
+```
+
+### Python String Operations
+```python
+s = "Welcome"
+s * 2                 # "WelcomeWelcome"
+s[1:4]                # "elc"
+len(s)                # length
+"Hello" + " World"    # concatenation
+```
+
+### String Comparison (Java)
+```java
+// Use equals() NOT == for content comparison
+String a = "hello";
+String b = "hello";
+a == b          // compares references (may be true due to interning)
+a.equals(b)     // compares content (always correct)
+```
+
+---
+
+## 6. Functions/Methods
+
+### Java Method Syntax
+```java
+modifier returnType methodName(parameters) {
+    // method body
+}
+```
+
+### Method Overloading
+Multiple methods with same name but different parameters:
+```java
+void test() { }
+void test(int a) { }
+void test(int a, int b) { }
+double test(double a) { }
+```
+This is a form of **polymorphism** (compile-time / static polymorphism).
+
+### Python Functions
+```python
+def function_name(param1, param2):
+    """Docstring explaining what this does"""
+    # body
+    return value
+
+# Default parameters
+def greet(name, greeting="Hello"):
+    return f"{greeting}, {name}!"
+
+# Keyword arguments
+greet(greeting="Hi", name="Abebe")
+
+# *args (variable positional) and **kwargs (variable keyword)
+def sum_all(*args):
+    return sum(args)    # sum_all(1,2,3) → 6
+
+def print_info(**kwargs):
+    for k, v in kwargs.items():
+        print(f"{k}: {v}")   # print_info(name="A", age=20)
+```
+
+### Method Parameters
+- **Pass by value**: Java passes primitives by value (copy)
+- **Pass by reference**: Objects pass the reference (copy of reference)
+
+### Varargs (Variable Arguments) in Java
+```java
+public static int sum(int... numbers) {
+    int total = 0;
+    for (int n : numbers) total += n;
+    return total;
+}
+
+sum(1, 2, 3);        // 6
+sum(10, 20);         // 30
+sum();               // 0 (zero args is valid)
+```
+Rules: only one varargs per method, must be the last parameter.
+
+### Random Number Generation
+```java
+// Java
+Random rand = new Random();
+int x = rand.nextInt(100);       // 0 to 99
+int y = rand.nextInt(50) + 10;   // 10 to 59
+double d = rand.nextDouble();    // 0.0 to 1.0
+
+// Python
+import random
+x = random.randint(1, 100)       // 1 to 100 inclusive
+y = random.choice(['A','B','C']) // random element
+```
+
+### StringBuilder (Mutable String)
+```java
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");        // "Hello World"
+sb.insert(5, " Java");      // "Hello Java World"
+sb.reverse();               // "dlroW avaJ olleH"
+sb.toString();              // convert to String
+```
+Why? Strings are immutable; `StringBuilder` is efficient for many concatenations.
+
+---
+
+## 7. Exception Handling
+
+### Exception Hierarchy
+```
+Throwable
+├── Error (irrecoverable — JVM errors, out of memory, etc.)
+└── Exception
+    ├── RuntimeException (unchecked — ArithmeticException,
+    │   NullPointerException, ArrayIndexOutOfBoundsException)
+    └── Checked exceptions (IOException, SQLException, etc.)
+```
+
+### try-catch-finally
+```java
+try {
+    // code that may throw exception
+} catch (ExceptionType e) {
+    // handle exception
+} finally {
+    // always executes (even if exception occurs or not)
+}
+```
+
+### throw vs throws
+| throw | throws |
+|-------|--------|
+| Used to **explicitly throw** an exception | Used to **declare** exceptions a method may throw |
+| `throw new ArithmeticException("msg");` | `void method() throws IOException {}` |
+| Inside method body | In method signature |
+
+### Types of Errors
+1. **Syntax Error** — violates language grammar (compiler catches)
+2. **Runtime Error** — occurs during execution (e.g., division by zero)
+3. **Logical Error** — compiles and runs but gives wrong output
+
+---
+
+## 8. Input/Output & File Handling
+
+### Java File I/O
+```java
+// Reading from file
+FileInputStream fis = new FileInputStream("file.txt");
+
+// Writing to file
+FileOutputStream fos = new FileOutputStream("output.txt");
+
+// Scanner for user input
+Scanner sc = new Scanner(System.in);
+int n = sc.nextInt();
+```
+
+### File I/O in Python
+```python
+# Reading
+file = open("file.txt", "r")
+content = file.read()
+file.close()
+
+# Writing
+with open("file.txt", "w") as f:
+    f.write("Hello World")
+```
+
+### File Modes
+| Mode | Meaning |
+|------|---------|
+| `r` | Read |
+| `w` | Write (overwrites) |
+| `a` | Append |
+| `r+` | Read and write |
+
+---
+
+## 9. Program Structure & Memory
+
+### Java Program Structure
+```java
+package packageName;
+
+import java.util.*;
+
+public class ClassName {
+    // class variables (static)
+    // instance variables
+    // constructors
+    // methods
+    
+    public static void main(String[] args) {
+        // entry point
+    }
+}
+```
+
+### Compilation Process (C++)
+```
+Source Code → Preprocessor → Compiler → Assembler → Linker → Executable
+```
+
+### Memory Areas
+- **Stack**: local variables, method calls (LIFO)
+- **Heap**: dynamically allocated objects (new keyword)
+- **Code segment**: compiled code
+- **Data segment**: static/global variables
+
+### Constructor
+- Same name as class
+- No return type (not even void)
+- Called automatically when object is created
+- Can be overloaded
+
+---
+
+## 10. Problem-Solving Techniques
+
+### Steps in Problem Solving
+1. **Understand the problem** — read carefully, identify inputs/outputs
+2. **Design algorithm** — stepwise logical description (platform independent)
+3. **Write code** — implement in chosen language
+4. **Test & debug** — verify with sample inputs
+5. **Optimize** — improve efficiency if needed
+
+### Algorithm Analysis
+- **Time Complexity**: How runtime grows with input size
+  - O(1) — constant
+  - O(log n) — logarithmic
+  - O(n) — linear
+  - O(n²) — quadratic
+  - O(2ⁿ) — exponential
+- **Space Complexity**: How memory usage grows with input size
+
+### Algorithm Analysis Cases
+- **Best case**: minimum time (fastest)
+- **Worst case**: maximum time (slowest)
+- **Average case**: expected time
+
+### Flowchart Symbols
+- Oval: Start/End
+- Parallelogram: Input/Output
+- Rectangle: Process
+- Diamond: Decision
+- Arrow: Flow direction
+
+---
+
+## 11. Recursion
+
+Recursion is a technique where a function calls itself.
+
+### Structure
+```java
+returnType recursiveFunction(parameters) {
+    if (baseCase) {
+        return baseValue;
+    } else {
+        // recursive call with modified parameters
+        return recursiveFunction(modifiedParams);
+    }
+}
+```
+
+### Examples
+```java
+// Factorial
+int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+
+// Fibonacci
+int fib(int n) {
+    if (n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+```
+
+### Recursion Deep — Call Stack Analysis
+
+```java
+public static int factorial(int n) {
+    if (n <= 1) return 1;
+    return n * factorial(n - 1);
+}
+```
+**Call stack for factorial(4):**
+```
+factorial(4) → 4 * factorial(3)
+  factorial(3) → 3 * factorial(2)
+    factorial(2) → 2 * factorial(1)
+      factorial(1) → 1      ← base case reached
+    ← returns 2*1 = 2
+  ← returns 3*2 = 6
+← returns 4*6 = 24
+```
+
+**Tail recursion vs head recursion:**
+- **Head recursion**: recursive call happens before processing (call then compute)
+- **Tail recursion**: recursive call is the last operation (can be optimized by compiler)
+
+### Recursion vs Iteration
+| Recursion | Iteration |
+|-----------|-----------|
+| Function calls itself | Loop constructs |
+| More memory (call stack) | Less memory |
+| Elegant for tree/graph problems | Better for simple loops |
+| Risk of stack overflow | No such risk |
+
+### Assertions (Java)
+```java
+int x = -5;
+assert x >= 0 : "x must be non-negative";   // throws AssertionError if false
+// Enable with: java -ea ClassName
+```
+
+---
+
+## 12. Testing & Debugging
+
+### Testing Principles
+- **Unit testing**: test individual components
+- **Integration testing**: test combined components
+- **System testing**: test entire system
+- **Alpha testing**: internal testing by developers
+- **Beta testing**: testing by real users
+
+### Decision/Condition Coverage
+- Test every branch of decision points (if-else, switch)
+- 100% decision coverage means every branch executed at least once
+
+### Debugging Techniques
+1. Print statements / logging
+2. Use debugger (breakpoints, step over/into)
+3. Rubber duck debugging
+4. Code review
+
+### Common Bugs
+- Off-by-one errors in loops
+- Null pointer dereference
+- Array index out of bounds
+- Infinite loops
+- Integer overflow
+- Race conditions (multithreading)
+
+---
+
+## Practice Questions (from Actual Model Exams)
+
+### Q1: Trace the output
+```java
+int x = 7;
+x++;
+int y = x;
+x = x * 3;
+System.out.println("the value of y is " + y);
+```
+**Answer**: `the value of y is 8`
+
+### Q2: For loop output
+```java
+int[] arr = {3,4,5,6,7};
+for(int i = 0; i <= arr.length - 2; ++i) {
+    System.out.println(arr[i] + ",");
+}
+```
+**Answer**: `3,4,5,6` (loop runs while i ≤ 3, so i = 0,1,2,3)
+
+### Q3: Increment operator
+```java
+int a = 4;
+System.out.print(++a * 5);
+```
+**Answer**: `25` (prefix: a becomes 5, then 5*5)
+
+### Q4: Python list assignment
+```python
+siTE = ['A', 'B', 'C', 'D']
+siTE[1:4] = ['E', 'F', 'G']
+print(siTE)
+```
+**Answer**: `['A', 'E', 'F', 'G']` (slice replacement)
+
+### Q5: Python max on strings
+```python
+programming = ['Software', 'Electrical', 'Civil']
+print(max(programming))
+```
+**Answer**: `Software` (alphabetically last)
+
+### Q6: String comparison
+```python
+yourString = "Ethioipa"
+stringList = ["Kenya", "South Africa", "Ethioipa"]
+print(stringList[1] == yourString)
+print(stringList[1] is yourString)
+```
+**Answer**: `False False` (different strings at different memory locations)
+
+### Q7: Python type conversion
+```python
+x = int(float("10.0")) + float(int("20")) // 2
+print(x)
+```
+**Answer**: `15.0` (int(10.0)=10, int("20")=20, float(20)//2 = 10.0, 10+10.0=15.0)
+
+### Q8: For loop structure
+Which is correct?
+```
+A. for(initialization; condition)
+B. for(increment/decrement; initialization; condition)
+C. for(condition, initialization, increment/decrement)
+D. for(initialization; condition; increment/decrement)
+```
+**Answer**: D
+
+### Q9: Error types
+When running your program, you did not see any error. However, the final output is not correct. What type of error?
+- A. Syntax error
+- B. Compiling error
+- C. Logical error
+- D. Runtime error
+
+**Answer**: C (Logical error)
+
+### Q10: Array bounds exception
+Given:
+```java
+public void setValue(int position, String valueIn) {
+    list[position - 1] = valueIn;
+}
+```
+What might cause ArrayIndexOutOfBoundsException?
+- A. Return type being void
+- B. Method having more than one parameter
+- C. The value of the first parameter (position)
+- D. Type of position being int
+
+**Answer**: C (if position is 0 or greater than list.length+1)
+
+---
+
+## Key Exam Tips for Programming
+
+1. **Trace code manually** — step through each line, track variable values
+2. **Operator precedence** — memorize the order, especially ++ and --
+3. **Array bounds** — arrays are 0-indexed; index ≤ length-1
+4. **String vs char** — strings use "", chars use ''
+5. **= vs ==** — assignment vs comparison
+6. **break in switch** — without it, execution falls through to next case
+7. **Parameter passing** — Java is pass-by-value always
+8. **Static vs instance** — static belongs to class, instance belongs to object
+9. **Constructor name** = class name, no return type
+10. **Error categories** — syntax (compile-time), runtime, logical
