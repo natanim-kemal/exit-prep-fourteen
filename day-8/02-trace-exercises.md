@@ -229,6 +229,42 @@ d) Understanding system organization and interoperation
 
 ---
 
+### Problem 18b — Architectural Style Identification
+Match each scenario to the correct architectural style:
+
+1. Nodes act as both clients and servers with no central coordinator → _________
+2. Data flows through sequential processing stages like Unix pipes → _________
+3. Components communicate via events in a publish/subscribe model → _________
+4. Small independent services each deployed separately over a network → _________
+5. A central broker mediates requests between clients and servers → _________
+6. A shared knowledge base with multiple specialist components → _________
+
+**Solution:**
+1. **Peer-to-Peer (P2P)**
+2. **Pipe-and-Filter**
+3. **Event-Driven**
+4. **Microservices**
+5. **Broker**
+6. **Blackboard**
+
+---
+
+### Problem 18c — Layered Architecture Erosion
+Given four layers A (top), B, C, D (bottom). For each relation, state if it causes architectural erosion:
+
+a) Layer A calls a method in layer B → _________
+b) Layer D directly accesses a class in layer A → _________
+c) Layer A skips B and uses a function in layer C → _________
+d) Layer C depends on a service in layer B → _________
+
+**Solution:**
+a) **No erosion** — A depends on the layer directly below it ✓
+b) **Erosion** — bottom calling top (circular/backward dependency)
+c) **Erosion** — layer bridging/skipping (A bypasses B)
+d) **Erosion** — reverse dependency (C is below B, should not depend upward)
+
+---
+
 ## Set 6: Risk Management & Ethics
 
 ### Problem 19 — Risk Strategy Identification

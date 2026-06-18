@@ -54,6 +54,10 @@
 - [ ] **Maintainability**: fine-grain, self-contained, separate producers/consumers
 - [ ] Architecture documentation: stakeholder communication, design decisions, system organization
 - [ ] NOT for: figuring out source code flow
+- [ ] **Architectural styles**: Layered, P2P, Client-Server, Master-Slave, Pipe-and-Filter, Event-Driven, Microservices, MVC, Repository, Blackboard, Broker, SOA
+- [ ] **Layered erosion rules**: only immediate layer below; no skipping, no reverse, no backward
+- [ ] **Correct layer relation**: (A,B) where A is above B
+- [ ] **Erosion examples**: (D,A) backward, (A,C) skip, (C,B) reverse
 
 ### Professional Ethics
 - [ ] DO NOT accept work beyond your competence

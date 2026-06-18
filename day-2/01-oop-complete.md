@@ -535,10 +535,60 @@ class AnimalFactory {
 // Animal a = AnimalFactory.create("dog");  // don't need to know Dog class
 ```
 
-### Design Patterns — Observer (Publish-Subscribe)
-- Subject maintains list of observers/dependents
-- When state changes, subject notifies all observers automatically
-- Used in: Swing event model, MVC, button listeners
+### Design Patterns (GoF — Gang of Four)
+
+**Design patterns** = reusable solutions to common software design problems. The 23 GoF patterns fall into 3 categories:
+
+#### Creational (5) — How objects are created
+
+| Pattern | Purpose | Example |
+|---------|---------|---------|
+| **Singleton** | Ensures a class has **only one instance** globally | `Runtime.getRuntime()`, database connection pool |
+| **Factory Method** | Creates objects **without specifying exact class** | `AnimalFactory.create("dog")` |
+| **Abstract Factory** | Creates **families of related objects** | UI toolkits (Windows/Mac/Linux look) |
+| **Builder** | Constructs complex objects **step-by-step** | `StringBuilder`, `StringBuffer` |
+| **Prototype** | Creates objects by **cloning** an existing one | `clone()` method |
+
+#### Structural (7) — How classes/objects are composed
+
+| Pattern | Purpose | Example |
+|---------|---------|---------|
+| **Adapter** | Makes **incompatible interfaces work together** | Power plug adapter, `Arrays.asList()` |
+| **Decorator** | Adds behavior to an object **dynamically** | `BufferedReader br = new BufferedReader(new FileReader(f))` |
+| **Proxy** | Provides a **surrogate/placeholder** for another object | Lazy loading, access control, `java.lang.reflect.Proxy` |
+| **Facade** | Provides a **simplified interface** to a complex subsystem | `JOptionPane.showMessageDialog()` |
+| **Composite** | Treats individual objects and compositions **uniformly** | File system (files + folders both extend Entry) |
+| **Bridge** | Separates **abstraction from implementation** | JDBC drivers (same API, different DB implementations) |
+| **Flyweight** | Shares objects to support **large numbers efficiently** | String pool, character glyphs in text editors |
+
+#### Behavioral (11) — How objects interact
+
+| Pattern | Purpose | Example |
+|---------|---------|---------|
+| **Memento** | **Save/restore** object state to previous state | Ctrl+Z (undo), checkpoints |
+| **Observer** | **Notify dependents** when subject state changes | Swing listeners, MVC, pub-sub |
+| **Iterator** | **Traverse** a collection without exposing structure | `for (T item : collection)` |
+| **Strategy** | **Encapsulates interchangeable algorithms** | Sorting algorithms, payment methods |
+| **Command** | Encapsulates a **request as an object** | Menu actions, undo/redo queues |
+| **Visitor** | **Adds new operations** without changing object classes | AST node processing, compilers |
+| **State** | Changes **behavior when internal state changes** | Vending machine, TCP connection states |
+| **Template Method** | Defines algorithm **skeleton**, subclasses fill steps | `AbstractList.indexedBinarySearch()` |
+| **Chain of Resp.** | Passes request along a **chain of handlers** | Loggers (INFO → WARN → ERROR), event bubbling |
+| **Mediator** | **Centralizes communication** between objects | Chat room, air traffic control |
+| **Interpreter** | Defines **grammar** and interprets sentences | Regex engines, language parsers |
+
+#### Common Exam Traps
+
+| Question | Wrong answer (trap) | Correct answer |
+|----------|---------------------|----------------|
+| Restore object to previous state | Iterator, Observer | **Memento** |
+| Only one instance | Factory, Builder | **Singleton** |
+| Incompatible interfaces | Facade, Bridge | **Adapter** |
+| Interchangeable algorithms | Command, State | **Strategy** |
+| Add behavior dynamically | Proxy, Adapter | **Decorator** |
+| Family of related objects | Factory Method, Builder | **Abstract Factory** |
+| Simplified interface to subsystem | Adapter, Proxy | **Facade** |
+| Notify on state change | Memento, State | **Observer** |
 
 ### Serialization
 ```java

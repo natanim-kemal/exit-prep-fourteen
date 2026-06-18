@@ -234,6 +234,32 @@ else biggest_dimension = length
 Purpose: stakeholder communication, critical system design decisions, understanding organization/interoperation
 **Not for**: figuring out source code flow (that's code-level, not architecture)
 
+### 6.4 Architectural Styles & Patterns
+
+| Style | How it works | Example | Erosion Risk |
+|-------|-------------|---------|:------------:|
+| **Layered** | Each layer depends only on the one directly below | OSI model, Spring Boot, TCP/IP | High — layer skipping/bridging |
+| **Peer-to-Peer (P2P)** | Every node is both client and server; no central coordinator | BitTorrent, blockchain, Skype | Low — no hierarchy to violate |
+| **Client-Server** | Centralized server, multiple clients request services | Web apps (browser ←→ server) | Medium — server coupling |
+| **Master-Slave** | One master assigns work to replicated slaves | Database replication (primary → replicas) | Medium — single point of failure |
+| **Pipe-and-Filter** | Data flows through sequential processing stages | Unix pipes, compilers (lexer → parser → code gen) | Low — well-defined interfaces |
+| **Event-Driven** | Components communicate via events (publish/subscribe) | GUI frameworks, Kafka, Node.js EventEmitter | Low — loose coupling by design |
+| **Microservices** | Small independent services communicating over network | Netflix, Uber, Amazon | Medium — network/contract drift |
+| **Model-View-Controller (MVC)** | Separates data (Model), UI (View), and logic (Controller) | Django, Rails, Spring MVC | Medium — controller bloat |
+| **Repository** | Central data store accessed by all components | Database-backed apps | High — single point of coupling |
+| **Blackboard** | Shared knowledge base, multiple specialists read/write | AI expert systems | Low — independent specialists |
+| **Broker** | Central broker mediates between clients and servers | CORBA, message queues | Medium — broker becomes bottleneck |
+| **Service-Oriented (SOA)** | Loosely coupled services via protocols | Enterprise SOAP/XML systems | Medium — service contract versioning |
+
+#### Architectural Erosion Defined
+**Architectural erosion**: the gradual degradation of a system's intended structure when code-level dependencies violate the designed architecture.
+
+**In layered architectures specifically**:
+- Correct: `(A,B)` — layer A depends on the layer directly below (B) ✓
+- Erosion: `(D,A)` — bottom calls top (circular/backward dependency) ✗
+- Erosion: `(A,C)` — layer A skips B and calls C directly (layer bridging) ✗
+- Erosion: `(C,B)` — lower layer calls upper layer (reverse dependency) ✗
+
 ---
 
 ## LO7: Professional Ethics

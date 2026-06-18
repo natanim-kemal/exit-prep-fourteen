@@ -553,6 +553,149 @@ D. High cohesion, tight coupling
 
 ---
 
+## Set 8: Design Pattern Identification
+
+### Problem 28 — Pattern Matching
+Identify the design pattern in each scenario:
+
+a) `UndoManager` saves snapshots of document state so users can revert changes → _________
+b) A logger writes messages to console, file, and network — each handler passes to the next → _________
+c) A sorting utility that accepts different comparison algorithms at runtime → _________
+d) A framework defines `prepare()` → `cook()` → `serve()` — subclasses implement each step → _________
+e) A database connection pool provides a single global access point → _________
+f) A GUI button notifies multiple panels when clicked → _________
+g) Wrapping a `FileReader` with a `BufferedReader` to add buffering behavior → _________
+h) Different UI controls (buttons, text fields) are treated the same way in a container → _________
+
+**Solution:**
+a) **Memento** — state save/restore for undo
+b) **Chain of Responsibility** — each handler decides to process or pass along
+c) **Strategy** — interchangeable algorithms
+d) **Template Method** — skeleton filled by subclasses
+e) **Singleton** — single global instance
+f) **Observer** — subject notifies dependents
+g) **Decorator** — dynamically adds behavior
+h) **Composite** — individual and composite treated uniformly
+
+---
+
+### Problem 29 — Which Pattern?
+```java
+public class Logger {
+    private static Logger instance;
+    private Logger() {}
+    public static Logger getInstance() {
+        if (instance == null) instance = new Logger();
+        return instance;
+    }
+    public void log(String msg) { System.out.println(msg); }
+}
+```
+**Answer**: **Singleton** — private constructor, static getInstance()
+
+---
+
+### Problem 30 — Which Pattern?
+```java
+interface SortStrategy { int[] sort(int[] data); }
+class BubbleSort implements SortStrategy { ... }
+class QuickSort implements SortStrategy { ... }
+
+class Sorter {
+    private SortStrategy strategy;
+    public void setStrategy(SortStrategy s) { this.strategy = s; }
+    public int[] sort(int[] data) { return strategy.sort(data); }
+}
+```
+**Answer**: **Strategy** — interchangeable algorithms via interface
+
+---
+
+### Problem 31 — Which Pattern?
+```java
+interface Iterator<T> {
+    boolean hasNext();
+    T next();
+}
+class ArrayIterator<T> implements Iterator<T> {
+    private T[] items;
+    private int pos = 0;
+    public boolean hasNext() { return pos < items.length; }
+    public T next() { return items[pos++]; }
+}
+```
+**Answer**: **Iterator** — traverses collection without exposing internal structure
+
+---
+
+### Problem 32 — Which Pattern?
+```java
+class TextWriter {
+    public void write(String text) { System.out.print(text); }
+}
+class BoldDecorator extends TextWriter {
+    private TextWriter writer;
+    BoldDecorator(TextWriter w) { this.writer = w; }
+    public void write(String text) { System.out.print("<b>"); writer.write(text); System.out.print("</b>"); }
+}
+```
+**Answer**: **Decorator** — wraps object to dynamically add behavior
+
+---
+
+### Problem 33 — Which Pattern?
+```java
+class ComputerFacade {
+    private CPU cpu = new CPU();
+    private Memory mem = new Memory();
+    private HardDrive hd = new HardDrive();
+    
+    public void start() {
+        cpu.freeze();
+        mem.load(0, hd.read(0, 1024));
+        cpu.execute();
+    }
+}
+```
+**Answer**: **Facade** — simplified interface to complex subsystem
+
+---
+
+### Problem 34 — Which Pattern?
+```java
+class TextEditor {
+    private class Memento {
+        String content;
+        Memento(String c) { content = c; }
+    }
+    private String content;
+    
+    public Memento save() { return new Memento(content); }
+    public void restore(Memento m) { content = m.content; }
+    public void write(String s) { content = s; }
+}
+```
+**Answer**: **Memento** — save/restore object state
+
+---
+
+### Problem 35 — Exam Multiple Choice
+Which pattern is used when an object's behavior changes based on its internal state?
+a) Strategy
+b) State ✓
+c) Observer
+d) Command
+
+**Answer**: **State** — different behavior per state (vending machine: hasMoney vs noMoney)
+
+---
+
+### Problem 36 — True or False
+"Adapter pattern is used to provide a simplified interface to a complex subsystem."
+**Answer**: **False** — that's Facade. Adapter makes incompatible interfaces work together.
+
+---
+
 ## Common Exam Traps — OOP
 
 | Trap | Example | Why |

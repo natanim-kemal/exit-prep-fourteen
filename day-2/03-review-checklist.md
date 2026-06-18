@@ -55,6 +55,22 @@
 - [ ] Inheritance arrow (empty triangle)
 - [ ] Implementation arrow (dashed triangle)
 
+### Design Patterns (GoF)
+- [ ] **Creational**: Singleton, Factory Method, Abstract Factory, Builder, Prototype
+- [ ] **Structural**: Adapter, Decorator, Proxy, Facade, Composite, Bridge, Flyweight
+- [ ] **Behavioral**: Memento, Observer, Iterator, Strategy, Command, Visitor, State, Template Method, Chain of Resp., Mediator, Interpreter
+- [ ] **Singleton**: private constructor, static getInstance()
+- [ ] **Memento**: save/restore state (undo)
+- [ ] **Observer**: notify dependents on state change (pub-sub)
+- [ ] **Strategy**: interchangeable algorithms
+- [ ] **Decorator**: dynamically add behavior (wrapping)
+- [ ] **Facade**: simplified interface to complex subsystem
+- [ ] **Adapter**: makes incompatible interfaces work together
+- [ ] **Composite**: treat individuals and compositions uniformly
+- [ ] **Iterator**: traverse collection without exposing structure
+- [ ] **Template Method**: skeleton algorithm, subclasses fill steps
+- [ ] **State**: behavior changes based on internal state
+
 ### GUI (Swing)
 - [ ] AWT vs Swing differences
 - [ ] JFrame (top-level, BorderLayout)
@@ -169,4 +185,20 @@ UML NOTATION
 # protected
 ▷— inheritance
 - - ▷  implementation
+
+DESIGN PATTERNS (GoF)
+═══════════════════════
+Creational: Singleton, Factory, Builder, Prototype
+Structural: Adapter, Decorator, Facade, Composite, Proxy
+Behavioral: Memento(undo), Observer(pub-sub), Strategy,
+            Iterator, State, Command, Template Method
+
+EXAM TRAPS
+══════════
+Undo/restore → Memento (not Iterator)
+One instance → Singleton (not Factory)
+Add behavior → Decorator (not Proxy)
+Interchangeable → Strategy (not State)
+Simplified interface → Facade (not Adapter)
+Incompatible interfaces → Adapter (not Bridge)
 ```
