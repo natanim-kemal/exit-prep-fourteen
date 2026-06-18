@@ -170,3 +170,20 @@
 
 **Q12:** Correct data mining process?
 - a. **Training → Testing → Evaluation → Deployment** ✓
+
+---
+
+## Question Bank Study Notes
+
+### AI Fundamentals
+AI = machines performing tasks requiring human intelligence. Rapidly evolving field. Branches: ML, Deep Learning, NLP, Computer Vision, Robotics, Expert Systems.
+
+### Intelligent Agents
+Types by capability: Simple Reflex (current percept only), Model-based (internal world model), Goal-based (plan to achieve goals), Utility-based (maximize preference), Learning (improve from experience).
+
+### Knowledge Representation
+Methods: Logic (precise), Semantic Network (graph of concepts), Frame (structured slots — e.g., Samuel: player, 25, 1.98m, Manchester), Rule-based (IF-THEN).
+
+### NLP & Ethics
+NLP tasks: tokenization, POS tagging, NER, sentiment analysis, translation. TF-IDF: measures term importance. Ethics: bias, transparency, privacy, safety. Turing Test: indistinguishable human-like behavior.
+

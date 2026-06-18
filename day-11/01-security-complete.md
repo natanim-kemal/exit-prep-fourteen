@@ -259,6 +259,39 @@ Symmetric key encrypted asymmetrically → message encrypted symmetrically
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### CIA Triad
+**Confidentiality** (encryption), **Integrity** (hashing), **Availability** (redundancy).
+
+### Cryptography
+Symmetric (AES — same key, fast): secures database storage. Asymmetric (RSA — public/private). Hashing (SHA-256): one-way. PKI: digital certificates for authentication.
+
+### Threats
+| Attack | Description | Defense |
+|--------|------------|---------|
+| Malware | Viruses, worms, Trojans, ransomware | Antivirus, patches |
+| Phishing | Deceptive emails | User awareness |
+| DoS/DDoS | Overwhelm server | Rate limiting |
+| MitM | Intercept communication | TLS/SSL |
+| SQL Injection | Inject malicious SQL | Prepared statements |
+| XSS | Inject scripts | Output encoding, CSP |
+| Session hijacking | Steal session cookies | HttpOnly, Secure flags |
+
+Passive = monitor only (traffic analysis). Active = modify data (DoS, masquerade, replay).
+
+### Malware Types
+Virus (attaches to files), Worm (self-replicating), Trojan (disguised), Ransomware (encrypts + demands payment), Rootkit (hides in OS), Spyware (monitors), Adware (ads).
+
+### Access Control
+MFA (multi-factor): knowledge + possession + inherence. Firewalls: Packet Filtering, Stateful Inspection, Proxy, NGFW. IDS = monitor/alert. IPS = detect + block.
+
+### Compliance
+GDPR: users informed about data use. Least Privilege: minimum access. Defense in Depth: multiple security layers.
+
+
 ## Quick Reference — Blueprint Table
 
 | LO | Topic | Items | Cognitive |

@@ -875,6 +875,51 @@ In a singly linked list with a head pointer, deleting the first node takes:
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### Big-O Notation
+Upper bound on time/space: O(1) constant, O(log n) logarithmic, O(n) linear, O(n log n) linearithmic, O(n²) quadratic, O(2ⁿ) exponential, O(n!) factorial (fastest). Amortized O(1): average cost over many operations (dynamic array append).
+
+### Arrays & Linked Lists
+Array: O(1) access, O(n) search/insert/delete. Linked list: O(1) insert at head, O(n) search. Doubly: prev + next pointers. Circular: last → head. Advantage: dynamic size.
+
+### Stacks & Queues
+Stack: LIFO. Push, pop, peek — all O(1). Used for: parentheses matching, undo/redo, infix→postfix, call stack. Queue: FIFO. Enqueue (rear), dequeue (front). Circular queue solves front-moved overflow. Priority queue: heap-based, processes by priority. Deque: double-ended.
+
+### Trees
+Root (no parent), leaf (no children), depth of root = 0. n nodes → n-1 edges. BST: left < parent < right. Inorder = sorted. Unbalanced BST degenerates to linked list (O(n)). Complete: all levels filled left to right. Full: every node 0 or 2 children. AVL: self-balancing, O(log n) height.
+
+**Traversals**: Preorder (Root-Left-Right) = copy/serialize. Inorder = sorted order. Postorder (Left-Right-Root) = delete tree safely. Level-order = BFS (uses queue).
+
+### Heaps
+Max-heap: parent ≥ both children. Min-heap: parent ≤ both. Insert O(log n), build O(n). Heapify: sift-up (insert), sift-down (delete). Heap sort: O(n log n), not stable.
+
+### Graphs
+**Representation**: Adjacency Matrix O(V²) — dense. Adjacency List O(V+E) — sparse. Diagonal = self-loops. **Properties**: undirected (no direction), connected (path between all pairs), acyclic (no cycles), weighted (edges have values). Degree = incident edges.
+
+**Algorithms**: BFS (queue, shortest path unweighted, O(V+E)), DFS (stack/recursion, detect cycles/components, space O(m)), Dijkstra (shortest path weighted, no negative edges, priority queue), Kruskal/Prim (MST), Topological sort (DAG ordering), Kosaraju/Tarjan (SCC).
+
+### Sorting
+| Algorithm | Best | Avg | Worst | Space | Stable |
+|-----------|------|-----|-------|-------|--------|
+| Bubble | O(n) | O(n²) | O(n²) | O(1) | Yes |
+| Insertion | O(n) | O(n²) | O(n²) | O(1) | Yes |
+| Selection | O(n²) | O(n²) | O(n²) | O(1) | No |
+| Merge | O(n log n) | O(n log n) | O(n log n) | O(n) | Yes |
+| Quick | O(n log n) | O(n log n) | O(n²) | O(log n) | No |
+| Heap | O(n log n) | O(n log n) | O(n log n) | O(1) | No |
+
+Divide & conquer: Merge, Quick. Not in-place: Merge. Not stable: Selection, Quick, Heap (heapify swaps break order). Adaptive (O(n) best): Insertion, Bubble.
+
+### Hashing & Binary Search
+Hash table average search: O(1). Collision: chaining, probing. Binary search: requires sorted input. Mid = low + (high-low)/2. O(log n).
+
+### Key Facts
+Tree edges = n-1. BFS branching factor = children per node. BST inorder successor = smallest in right subtree. Stack push/pop = O(1). FIFO describes Queue. LIFO describes Stack.
+
+
 ## Quick Reference Card
 
 ```

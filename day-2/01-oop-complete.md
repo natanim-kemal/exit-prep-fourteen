@@ -1103,6 +1103,41 @@ What is the first callback method invoked during activity lifecycle?
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### OOP Pillars
+**Encapsulation**: hide data, public getters/setters. **Inheritance**: child extends parent (is-a). **Polymorphism**: many forms — overloading (compile-time), overriding (runtime). **Abstraction**: hide complexity.
+
+### Access Modifiers
+`private` = own class only. `protected` = same package + subclasses. `public` = everywhere.
+
+### Key Concepts
+**Constructor**: same name as class, no return type. Can be overloaded. `this` = current object. `super` = parent constructor/method. **Destructor**: frees resources. **Copy constructor**: creates copy of existing object.
+
+### Overloading vs Overriding
+Overloading: same name, different params, compile-time, same class. Overriding: same signature, runtime, subclass, @Override.
+
+### Abstract vs Interface
+Abstract: can have concrete methods, constructor, single inheritance. Interface: contract only (pre-Java 8), multiple inheritance, no constructor. Abstract classes cannot be instantiated.
+
+### UML
+"Is-a" = inheritance (empty triangle). "Has-a" loose = aggregation (empty diamond). "Has-a" strong = composition (filled diamond) — child cannot exist without parent.
+
+### SOLID
+**S**ingle Responsibility (one reason to change). **O**pen/Closed (extend, don't modify). **L**iskov Substitution (subclass replaces parent). **I**nterface Segregation (small interfaces). **D**ependency Inversion (abstractions, not concretions). DRY = Don't Repeat Yourself.
+
+### Exceptions
+Checked: must catch/declare (IOException). Unchecked: RuntimeException (NullPointerException, ArrayIndexOutOfBoundsException). `finally` always runs.
+
+### Design Patterns
+**Creational**: Singleton (one instance), Factory, Builder (step-by-step), Prototype (clone). **Structural**: Adapter (convert interfaces), Decorator (add behavior), Facade (simplify subsystem), Proxy (placeholder), Composite (treat uniform). **Behavioral**: Observer (notify on state change), Strategy (runtime algorithm), Command (request as object), Iterator (sequential access), State (behavior per state), Template Method (skeleton), Memento (undo/restore), Chain of Resp. (handler chain).
+
+### Other
+`final` = no subclass. `static` = belongs to class. `instanceof` = type check. Interface default method (Java 8+). Lambda = short anonymous function. Anonymous class = defined + instantiated together. High cohesion + low coupling = good design.
+
+
 ## Quick Reference Card
 
 ```

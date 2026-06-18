@@ -665,6 +665,32 @@ Convoy effect in FCFS scheduling means:
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### Processes
+Process = program in execution (own memory, PCB). Thread = lightweight, shares memory. States: New → Ready → Running → Waiting/Terminated.
+
+### CPU Scheduling
+FCFS (arrival order), SJF (shortest next burst), Priority (higher priority first), Round Robin (time quantum). Criteria: throughput, turnaround, waiting time, response time.
+
+### Synchronization & Deadlock
+Mutex = mutual exclusion (one process at a time). Semaphore = signaling (wait/signal). Deadlock 4 conditions: Mutual Exclusion, Hold and Wait, No Preemption, Circular Wait. Prevention: break any condition. Avoidance: Banker's algorithm.
+
+### Memory
+Paging (fixed, no external frag), Segmentation (variable, external frag). Virtual memory = more memory than physical. Page replacement: FIFO (Belady's anomaly), LRU, Optimal. Thrashing: excessive paging — reduce multiprogramming.
+
+### System Software
+Compiler (source→object), Linker (object→executable), Loader (executable→memory). Boot: Power→BIOS→Bootstrap→Bootloader→Kernel.
+
+### Kernel Types
+Monolithic (all in kernel, fast), Microkernel (minimal, modular), Exokernel (delegates to apps), Hybrid (combined).
+
+### I/O
+Polling (busy-wait), Interrupts (device notifies), DMA (direct memory access, no CPU).
+
+
 ## Quick Reference Card
 
 ```

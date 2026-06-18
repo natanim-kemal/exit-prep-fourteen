@@ -694,6 +694,82 @@ assert x >= 0 : "x must be non-negative";   // throws AssertionError if false
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### Variables & Data Types
+Variables store data with a name, type, and value. Primitive types: `int`, `float`, `char`, `bool`. `string` is NOT primitive. Declare constants with `const`. **Scope**: local (inside function), global (entire program), block (`{}`). Shadowing: local hides global.
+
+### Operators
+**Arithmetic** (`+`, `-`, `*`, `/`, `%`) — precedence: `*`/`/`/`%` before `+`/`-`. **Relational** (`==`, `!=`, `<`, `>`, `<=`, `>=`). **Logical** (`&&`, `||`, `!`) — short-circuit: second operand skipped if first determines result. **Bitwise** (`&`, `|`, `^`, `~`, `<<`, `>>`). **Ternary** (`?:` — 3 operands). `sizeof()` returns bytes. `++i` increments before use, `i++` after. `sizeof(int)` = 4 bytes on 32-bit.
+
+### Control Flow
+**if-else**, **switch-case** (without `break` → fall-through). **Loops**: `for` (known count), `while` (checks before), `do-while` (at least once), `foreach`. Infinite loop: condition never false. Jump: `break` (exit loop), `continue` (skip iteration), `return` (exit function). `loop` is NOT a jump statement.
+
+### Functions
+**Declaration** (signature) vs **Definition** (body). **Prototype**: declares before use. **Pass-by-value**: copies argument. **Pass-by-reference**: modifies original. **Overloading**: same name, different parameters. Return: `void` = nothing, `int` = integer. Multiple returns via struct. Overloading differs in parameter number/type, not return type alone.
+
+### Recursion
+Function calls itself. Needs **base case** (stops) + **recursive case**. Call stack limits depth → stack overflow if too deep. Factorial(3) = 6.
+
+### Arrays & Vectors
+1D: `int arr[5] = {1,2,3,4,5}`. First index = 0. Out-of-bounds = undefined behavior. 2D = array of arrays. **Vector**: dynamic array — `push_back()` (add), `pop_back()` (remove last), `size()` (element count). String concatenation = joining strings.
+
+### Pointers & Memory
+**Null pointer** = address 0. `new` = dynamic allocation (heap). `delete` = free. Memory leak = allocated but not freed. `->` accesses struct member via pointer. Local vars on **stack**, call stack tracks active functions.
+
+### File I/O
+`ifstream` (read), `ofstream` (write), `fstream` (both). Append mode adds at end. Always check if file opened successfully. Text = human-readable chars.
+
+### Program Design
+**IPO**: Input-Process-Output. **Modular programming**: promotes code reuse. **Pseudocode**: informal algorithm description. **Debugging**: finding/fixing errors. **Debugger**: steps through code.
+
+### Error Types
+**Syntax**: grammar violation (caught by compiler). **Runtime**: occurs during execution (divide by zero). **Logical/Semantic**: runs but wrong output.
+
+### Other
+`7 % 3 = 1`. `//` = single comment, `/* */` = multi-line. `enum` = named integer constants. `typedef` = type alias. `struct` = groups data. Header files (`.h`) = shared declarations. `static` = persists between calls. `extern` = defined in another file. Swap without temp: `a=a+b; b=a-b; a=a-b`.
+
+
+---
+
+## Question Bank Study Notes
+
+### Variables & Data Types
+Variables store data with a name, type, and value. Primitive types: `int`, `float`, `char`, `bool`. `string` is NOT primitive. Declare constants with `const`. **Scope**: local (inside function), global (entire program), block (`{}`). Shadowing: local hides global.
+
+### Operators
+**Arithmetic** (`+`, `-`, `*`, `/`, `%`) — precedence: `*`/`/`/`%` before `+`/`-`. **Relational** (`==`, `!=`, `<`, `>`, `<=`, `>=`). **Logical** (`&&`, `||`, `!`) — short-circuit: second operand skipped if first determines result. **Bitwise** (`&`, `|`, `^`, `~`, `<<`, `>>`). **Ternary** (`?:` — 3 operands). `sizeof()` returns bytes. `++i` increments before use, `i++` after. `sizeof(int)` = 4 bytes on 32-bit.
+
+### Control Flow
+**if-else**, **switch-case** (without `break` → fall-through). **Loops**: `for` (known count), `while` (checks before), `do-while` (at least once), `foreach`. Infinite loop: condition never false. Jump: `break` (exit loop), `continue` (skip iteration), `return` (exit function). `loop` is NOT a jump statement.
+
+### Functions
+**Declaration** (signature) vs **Definition** (body). **Prototype**: declares before use. **Pass-by-value**: copies argument. **Pass-by-reference**: modifies original. **Overloading**: same name, different parameters. Return: `void` = nothing, `int` = integer. Multiple returns via struct. Overloading differs in parameter number/type, not return type alone.
+
+### Recursion
+Function calls itself. Needs **base case** (stops) + **recursive case**. Call stack limits depth → stack overflow if too deep. Factorial(3) = 6.
+
+### Arrays & Vectors
+1D: `int arr[5] = {1,2,3,4,5}`. First index = 0. Out-of-bounds = undefined behavior. 2D = array of arrays. **Vector**: dynamic array — `push_back()` (add), `pop_back()` (remove last), `size()` (element count). String concatenation = joining strings.
+
+### Pointers & Memory
+**Null pointer** = address 0. `new` = dynamic allocation (heap). `delete` = free. Memory leak = allocated but not freed. `->` accesses struct member via pointer. Local vars on **stack**, call stack tracks active functions.
+
+### File I/O
+`ifstream` (read), `ofstream` (write), `fstream` (both). Append mode adds at end. Always check if file opened successfully. Text = human-readable chars.
+
+### Program Design
+**IPO**: Input-Process-Output. **Modular programming**: promotes code reuse. **Pseudocode**: informal algorithm description. **Debugging**: finding/fixing errors. **Debugger**: steps through code.
+
+### Error Types
+**Syntax**: grammar violation (caught by compiler). **Runtime**: occurs during execution (divide by zero). **Logical/Semantic**: runs but wrong output.
+
+### Other
+`7 % 3 = 1`. `//` = single comment, `/* */` = multi-line. `enum` = named integer constants. `typedef` = type alias. `struct` = groups data. Header files (`.h`) = shared declarations. `static` = persists between calls. `extern` = defined in another file. Swap without temp: `a=a+b; b=a-b; a=a-b`.
+
+
 ## Practice Questions (from Actual Model Exams)
 
 ### Q1: Trace the output

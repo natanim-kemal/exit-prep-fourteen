@@ -582,6 +582,29 @@ A foreign key value must:
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### Normalization
+1NF: atomic values. 2NF: 1NF + no partial dependencies. 3NF: 2NF + no transitive dependencies. BCNF: every determinant is candidate key. Anomalies: update, insertion, deletion.
+
+### ACID
+Atomicity (all or nothing), Consistency (valid state to valid state), Isolation (concurrent don't interfere), Durability (committed persists).
+
+### SQL
+DDL: CREATE, ALTER, DROP. DML: SELECT, INSERT, UPDATE, DELETE. `WHERE` before `GROUP BY`, `HAVING` after. `DISTINCT` removes duplicates. `JOIN` combines tables on condition. `CASCADE`: auto-delete referencing rows.
+
+### Keys
+**Primary key**: NOT NULL + unique. **Foreign key**: enforces referential integrity; can be NULL or valid reference.
+
+### Views & Indexes
+View = virtual table (no physical storage). Indexes speed reads, slow writes.
+
+### Security
+SQL Injection: use parameterized queries. Encryption: at rest (TDE) and in transit (SSL).
+
+
 ## Quick Reference Card
 
 ```

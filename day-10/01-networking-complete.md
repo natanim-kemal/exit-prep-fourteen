@@ -284,6 +284,28 @@ Network: `172.17.128.0/21`
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### OSI Model (7 Layers)
+7. Application (HTTP, FTP, DNS) → 6. Presentation (encryption, compression, translation) → 5. Session → 4. Transport (TCP/UDP) → 3. Network (IP, routing) → 2. Data Link (MAC, framing) → 1. Physical (bits).
+
+**Presentation layer**: encryption, compression, translation. NOT: synchronization.
+
+### TCP/IP (4 Layers)
+Application → Transport (TCP reliable, UDP fast) → Internet (IP) → Network Access.
+
+### Topologies
+Bus (single cable, simple), Star (central hub, manageable), Ring (circular), Mesh (all-to-all, redundant, fault-tolerant), Tree (hierarchical), Hybrid (mixed). Mesh = minimal latency, high redundancy.
+
+### Devices
+Hub (L1), Switch (L2, MAC), Router (L3, IP), Bridge (L2), Gateway (all layers). Firewall: Packet Filtering, Stateful Inspection (tracks connections), Proxy (L7).
+
+### Protocols
+HTTP (80), HTTPS (443), FTP (21/20), DNS (53), DHCP, SMTP (25). Flow control: prevents sender overwhelming receiver.
+
+
 ## Quick Reference — Blueprint Table
 
 | LO | Topic | Items | Cognitive |

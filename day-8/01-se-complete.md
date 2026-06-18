@@ -426,3 +426,28 @@ Order: **Forming → Storming → Norming → Performing → Adjourning**
 
 **Q20:** How many tests for 100% decision coverage on nested if-else with 2 decisions?
 - **Answer**: 4 tests (each of the 2 decisions has True/False → 2×2 paths)
+
+---
+
+## Question Bank Study Notes
+
+### Process Models
+**Waterfall**: sequential (rigid). **Agile**: iterative, incremental (Scrum, XP). **Spiral**: risk-driven. **Incremental**: deliver in parts.
+
+### Requirements
+Elicitation: interviews, surveys, observation. Functional = WHAT system does. Non-functional = HOW (performance, security, usability). Requirements should be testable and measurable.
+
+### Design
+**Coupling**: inter-module dependence (low = good). **Cohesion**: intra-module relatedness (high = good). High cohesion + low coupling = good design.
+
+**Architectures**: Layered (depends on layer below), Client-Server, Microservices (small independent services), Event-Driven (pub/sub), P2P (every node = client+server), Pipe-and-Filter (sequential stages), MVC (Model-View-Controller).
+
+### Testing
+Unit → Integration → System → UAT. Static: reviews, inspection (formal, by Fagan, 1972). Dynamic: executes code. Regression: check new code doesn't break old. Smoke: quick critical check. Alpha = dev testing. Beta = real users. Decision coverage = every branch.
+
+### Maintenance
+Corrective (fix bugs), Adaptive (environment change), Perfective (improve), Preventive (prevent issues). Effort estimation: Function Points, LOC.
+
+### Quality
+Code smells: long methods, duplicate code. Refactoring: improve structure without changing behavior. Ethics: public interest, confidentiality, competence, responsibility.
+

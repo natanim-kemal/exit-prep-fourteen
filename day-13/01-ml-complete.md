@@ -210,6 +210,29 @@ Combines multiple models to improve performance
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### Types
+**Supervised**: labeled data (classification, regression). Spam detection = Classification. Demand forecasting = Time-Series/Regression. **Unsupervised**: unlabeled data (clustering, association). **Reinforcement**: learn from rewards (game playing, robotics).
+
+### Algorithms
+Classification: Logistic Regression, Decision Trees, Random Forest, SVM, k-NN. Regression: Linear, Polynomial, Ridge/Lasso. Clustering: k-Means, Hierarchical, DBSCAN.
+
+### Evaluation
+Classification: Accuracy, Precision, Recall, F1-Score, Confusion Matrix. Regression: MSE, MAE, R².
+
+### Overfitting vs Underfitting
+Overfitting: complex model, good on train/poor on test → regularize, more data. Underfitting: simple model, poor everywhere → increase complexity.
+
+### Ensemble
+Bagging (parallel — Random Forest) reduces variance. Boosting (sequential — AdaBoost, XGBoost) reduces bias.
+
+### Key Concepts
+Gradient Descent: minimize loss. Word2Vec: dense word embeddings. TF-IDF: term importance. Batch Normalization: normalize layer inputs. Association rules: {diapers → beer}. Time-series: ARIMA, LSTM for forecasting.
+
+
 ## Quick Reference — Blueprint LOs
 
 | LO | Topic | Items |

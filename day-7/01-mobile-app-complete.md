@@ -265,6 +265,20 @@ MyApp/
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### Android Components
+**Activity**: single screen. **Fragment**: reusable UI within activity. **Service**: background processing. **Broadcast Receiver**: respond to system events. **Content Provider**: share data between apps.
+
+### Manifest & UI
+**AndroidManifest.xml**: declares permissions (GPS, Camera, Storage), components, intents. **Views**: Button, TextView. **ViewGroups**: LinearLayout, RelativeLayout. **RecyclerView**: efficient scrolling lists. **Intents**: messaging between components (explicit = by class, implicit = by action).
+
+### Lifecycle & Security
+Activity: onCreate → onStart → onResume → onPause → onStop → onDestroy. Emulator = virtual device for testing. Security: encrypt data, permission model (runtime), use Android Keystore.
+
+
 ## Quick Reference — Blueprint Table
 
 | LO | Topic | Items | Cognitive |

@@ -256,6 +256,26 @@ Where:
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### Project Basics
+**Project**: temporary, unique product. **Program**: related projects. **Portfolio**: collection of projects + programs.
+
+### Planning & Scheduling
+**WBS**: hierarchical task decomposition (scope management). **Gantt Chart**: visual timeline. **CPM**: critical path = longest dependent path, minimum project duration. **PERT**: probabilistic (optimistic/pessimistic/most likely).
+
+### Cost Estimation
+Expert judgment, analogous, parametric (COCOMO), bottom-up, three-point.
+
+### Risk
+Process: Identify → Analyze → Plan Response → Monitor. Strategies: Avoidance, Mitigation, Transference (insurance/outsource), Acceptance.
+
+### EVM
+PV (planned value), EV (earned value), AC (actual cost). CPI = EV/AC (>1 = under budget). SPI = EV/PV (>1 = ahead).
+
+
 ## Quick Reference — Blueprint Table
 
 | LO | Topic | Items | Cognitive |

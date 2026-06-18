@@ -400,6 +400,23 @@ for (let item of set) console.log(item + 5);
 
 ---
 
+---
+
+## Question Bank Study Notes
+
+### Protocols
+**HTTP**: stateless, request-response, no minimum message size. **HTTPS**: encrypted. **WebSocket**: full-duplex real-time. **GraphQL**: query-based API (request only needed data). **REST**: architectural style using HTTP methods.
+
+### HTML, CSS, JS
+HTML = structure (DOM tree). CSS = styling. Inherited properties: `color`, `font-family`. Not inherited: `margin`, `border`, `height`. JavaScript = dynamic behavior. DOM: `document.getElementById().innerHTML` changes content. AJAX: async server requests, partial page updates.
+
+### State Management
+Redux, Vuex, Context API manage application state across components.
+
+### Security
+SQL Injection (use prepared statements), XSS (inject scripts → use output encoding), Session hijacking (steal cookies → use HttpOnly/Secure flags).
+
+
 ## Quick Reference — Table of Specifications (Blueprint)
 
 | LO | Topic | Items | Cognitive Levels |
