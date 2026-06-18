@@ -1,4 +1,4 @@
-# Day 8 — Fundamentals of Software Engineering Complete Theory (8 Items)
+# Day 8 — Fundamentals of Software Engineering (92 Items)
 
 ## LO1: Basic Principles of Software Engineering (3 items)
 
@@ -426,3 +426,742 @@ Order: **Forming → Storming → Norming → Performing → Adjourning**
 
 **Q20:** How many tests for 100% decision coverage on nested if-else with 2 decisions?
 - **Answer**: 4 tests (each of the 2 decisions has True/False → 2×2 paths)
+
+
+## Practice Questions (from Question Bank)
+
+Answer: A
+### Q744. When designing for high performance, waterfall model main drawback?
+
+- A) Inflexible
+- B) Only for small projects
+- C) No testing phase
+- D) Too iterative
+  **Answer: A**
+
+### Q745. Which statement about Validation is correct?
+
+- A) Meets specification
+- B) Test coverage adequate
+- C) Meets actual user needs
+- D) Syntax correct
+  **Answer: C**
+
+### Q746. Adaptive maintenance is for?
+
+- A) Performance improvements
+- B) New OS/environment changes
+- C) Bug fixes
+- D) Future bug prevention
+  **Answer: B**
+
+### Q747. When designing for high performance, sRS purpose?
+
+- A) Lists bugs found
+- B) Provides user manual
+- C) Documents source code
+- D) Formally documents
+  **Answer: C**
+
+### Q748. Observer pattern category?
+
+- A) Behavioural
+- B) Creational
+- C) Structural
+- D) Architectural
+  **Answer: B**
+
+### Q749. Open/Closed Principle says?
+
+- A) Open to modification, closed to
+- B) Open to extension, closed to
+- C) Interfaces closed, abstract open
+- D) All methods public
+  **Answer: A**
+
+### Q750. In a resource-constrained environment, white-box testing has access to?
+
+- A) Performance benchmarks
+- B) I/O only
+- C) User criteria only
+- D) Internal code structure
+  **Answer: B**
+
+### Q751. Spiral model is driven by?
+
+- A) Risk analysis each cycle
+- B) Sequential phases
+- C) Customer feedback
+- D) Time-boxed sprints
+  **Answer: A**
+
+### Q752. Layered architecture separates?
+
+- A) Modules by language
+- B) Frontend and backend always
+- C) Client and server
+- D) Presentation, business
+  **Answer: D**
+
+### Q753. Identify the correct statement about verification in testing.
+
+- A) Performance meets benchmarks
+- B) Meets specification — are we
+- C) Code has no syntax errors
+- D) Meets user needs
+  **Answer: C**
+
+### Q754. Unit testing tests?
+
+- A) User acceptance
+- B) Integration between
+- C) Individual functions/clas
+- D) Whole system
+  **Answer: B**
+
+### Q755. Integration testing tests?
+
+- A) Individual functions
+- B) Interaction between
+- C) User acceptance
+- D) Full system against
+  **Answer: A**
+
+### Q756. When designing for high performance, system testing tests?
+
+- A) Complete integrated system
+- B) Individual units
+- C) Module interactions
+- D) User workflows only
+  **Answer: A**
+
+### Q757. Acceptance testing is done by?
+
+- A) Developers
+- B) End users/clients
+- C) QA team alone
+- D) Testers only
+  **Answer: C**
+
+### Q758. Agile values working software over?
+
+- A) Customer collaboration
+- B) Individuals and interactions
+- C) Responding to change
+- D) Comprehensive documentation
+  **Answer: A**
+
+### Q759. When designing for high performance, scrum Sprint duration?
+
+- A) 1 month always
+- B) 1 week
+- C) 3-6 months
+- D) 2-4 weeks
+  **Answer: D**
+
+### Q760. Scrum Master role?
+
+- A) Developer team lead
+- B) Product decision maker
+- C) Customer representative
+- D) Facilitator removing
+  **Answer: D**
+
+### Q761. Product Owner responsibility?
+
+- A) Team facilitation
+- B) Technical architecture
+- C) Daily standup facilitation
+- D) Managing product backlog and
+  **Answer: C**
+
+### Q762. How is Xp (extreme programming) practice: tdd best characterized?
+
+- A) Test-Driven Development —
+- B) Type-Driven Design
+- C) Test Data Development
+- D) Technology-Driven Design
+  **Answer: B**
+
+### Q763. Identify the correct statement about pair programming.
+
+- A) Two programs running
+- B) Parallel testing
+- C) Code review process
+- D) Two developers working
+  **Answer: B**
+
+### Q764. Identify the correct statement about continuous integration.
+
+- A) Frequently merging code to shared
+- B) Continuous refactoring
+- C) Continuous customer meetings
+- D) Continuous deployment only
+  **Answer: D**
+
+### Q765. Consider a system where which description of technical debt is accurate?
+
+- A) Cost of shortcuts/quick
+- B) Outdated technology
+- C) Financial cost of software
+- D) Poor test coverage
+  **Answer: B**
+
+### Q766. Which of the following best describes use case?
+
+- A) Description of system
+- B) Source code example
+- C) Deployment diagram
+- D) Test case
+  **Answer: C**
+
+### Q767. Identify the correct statement about n actor in use case modeling.
+
+- A) Database table
+- B) System component
+- C) Animated UI element
+- D) External entity interacti
+  **Answer: B**
+
+### Q768. In a resource-constrained environment, which statement about Software reliability is correct?
+
+- A) Software is fast
+- B) Software is secure
+- C) Probability of failure-fre
+- D) Software is maintainable
+  **Answer: C**
+
+### Q769. Cyclomatic complexity measures?
+
+- A) Number of classes
+- B) Number of linearly
+- C) Lines of code
+- D) Memory usage
+  **Answer: B**
+
+### Q770. Identify the correct statement about refactoring.
+
+- A) Adding new features
+- B) Fixing bugs
+- C) Restructuring code without
+- D) Rewriting from scratch
+  **Answer: C**
+
+### Q771. Which of the following best describes difference between fault, error, and failure?
+
+- A) All mean wrong output
+- B) Fault=defect in code
+- C) Fault is hardware
+- D) No difference
+  **Answer: C**
+
+### Q772. Black-box testing is also called?
+
+- A) Clear-box testing
+- B) Unit testing
+- C) Structural testing
+- D) Functional testing
+  **Answer: A**
+
+### Q773. Grey-box testing combines?
+
+- A) Unit and system testing
+- B) Functional and performance testing
+- C) Black-box and white-box testing
+- D) Manual and automated testing
+  **Answer: B**
+
+### Q774. When designing for high performance, which description of regression testing is accurate?
+
+- A) Testing on older hardware
+- B) Testing new features
+- C) Testing old versions
+- D) Re-testing after changes to
+  **Answer: C**
+
+### Q775. Identify the correct statement about smoke testing.
+
+- A) Quick basic test to check if
+- B) Testing under heavy load
+- C) Stress testing
+- D) Testing security vulnerabilities
+  **Answer: C**
+
+### Q776. Which description of load testing is accurate?
+
+- A) Testing system under
+- B) Testing file loading
+- C) Testing hardware limits
+- D) Loading test data
+  **Answer: B**
+
+### Q777. Consider a system where identify the correct statement about stress testing.
+
+- A) Testing beyond normal capacity
+- B) Performance benchmarking
+- C) Testing developer stress
+- D) Load testing synonym
+  **Answer: C**
+
+### Q778. Identify the correct statement about software architecture.
+
+- A) High-level structure of
+- B) Source code organization
+- C) Database schema
+- D) Physical building for developers
+  **Answer: B**
+
+### Q779. Microservices architecture characteristics?
+
+- A) Layered architecture variant
+- B) Single deployable monolith
+- C) Small independent services
+- D) Client-server pattern only
+  **Answer: A**
+
+### Q780. Which of the following best describes coupling in software design?
+
+- A) Measure of class size
+- B) Degree of interdependence
+- C) Inheritance depth
+- D) Number of methods
+  **Answer: B**
+
+### Q781. Which of the following best describes cohesion in software design?
+
+- A) Code comments quality
+- B) Test coverage
+- C) Degree to which elements
+- D) Module dependencies
+  **Answer: A**
+
+### Q782. Which of the following best describes Facade design pattern?
+
+- A) Hides object creation
+- B) Provides simple interface to
+- C) Converts interfaces
+- D) Adds behavior to objects
+  **Answer: B**
+
+### Q783. When designing for high performance, which description of Adapter design pattern is accurate?
+
+- A) Adds new behavior
+- B) Decomposes composite
+- C) Converts incompatible
+- D) Provides simplified
+  **Answer: A**
+
+### Q784. Identify the correct statement about Template Method pattern.
+
+- A) Defines skeleton algorithm in
+- B) Creates objects without
+- C) Handles events
+- D) Manages single instance
+  **Answer: D**
+
+### Q785. Which of the following best describes Strategy pattern?
+
+- A) Chain handlers
+- B) Define family of algorithms
+- C) Single fixed algorithm
+- D) Encapsulate request as object
+  **Answer: C**
+
+### Q786. Consider a system where which description of version control's purpose is accurate?
+
+- A) Compile source code
+- B) Deploy software
+- C) Track changes, enable
+- D) Control software licensing
+  **Answer: C**
+
+### Q787. What does git commit do?
+
+- A) Downloads remote changes
+- B) Records snapshot of staged
+- C) Merges branches
+- D) Sends changes to server
+  **Answer: C**
+
+### Q788. What does git push do?
+
+- A) Creates new branch
+- B) Sends local commits to
+- C) Downloads remote changes
+- D) Stages files
+  **Answer: A**
+
+### Q789. When designing for high performance, what does git pull do?
+
+- A) Pushes changes
+- B) Creates branch
+- C) Downloads and merges
+- D) Commits changes
+  **Answer: D**
+
+### Q790. Which of the following best describes pull request in git workflow?
+
+- A) Code backup request
+- B) Git pull command
+- C) Proposing changes from
+- D) Requesting others to pull
+  **Answer: A**
+
+### Q791. Which description of branching in git is accurate?
+
+- A) Splitting project into
+- B) Copying repository
+- C) Forking project
+- D) Creating parallel
+  **Answer: C**
+
+### Q792. When designing for high performance, identify the correct statement about software quality.
+
+- A) Code length
+- B) Number of features
+- C) Development speed
+- D) Degree of excellence:
+  **Answer: B**
+
+### Q793. Corrective maintenance is?
+
+- A) Improving performance
+- B) Fixing bugs after deployment
+- C) Adapting to new environment
+- D) Preventing future bugs
+  **Answer: D**
+
+### Q794. Perfective maintenance is?
+
+- A) Preventing bugs
+- B) Improving performance/usa
+- C) New environment adaptatio
+- D) Fixing bugs
+  **Answer: A**
+
+### Q795. Consider a system where preventive maintenance is?
+
+- A) Adapting to new OS
+- B) Restructuring/cleaning
+- C) Fixing current bugs
+- D) Adding new features
+  **Answer: C**
+
+### Q796. Identify the correct statement about legacy system.
+
+- A) Old system that no longer works
+- B) System using old programming language
+- C) Unmaintained abandoned system
+- D) Old system still in use, costly to
+  **Answer: D**
+
+### Q797. Which description of software entropy is accurate?
+
+- A) Software performance
+- B) Memory fragmentation
+- C) Data corruption
+- D) Tendency for software to
+  **Answer: A**
+
+### Q798. Identify the correct statement about agile manifesto's first value.
+
+- A) Responding to change over following a plan
+- B) Working software over comprehensive documentation
+- C) Individuals and interactions over processes and tools
+- D) Customer collaboration over contract negotiation
+  **Answer: C**
+
+### Q799. Which description of sprint backlog is accurate?
+
+- A) List of bugs
+- B) All product features
+- C) Set of items from
+- D) Release plan
+  **Answer: A**
+
+### Q800. Which of the following best describes product backlog?
+
+- A) Prioritized list of all
+- B) Sprint plan
+- C) List of bugs to fix
+- D) Test cases
+  **Answer: B**
+
+### Q801. Consider a system where identify the correct statement about velocity in Scrum.
+
+- A) Development speed in LOC
+- B) Deployment frequency
+- C) Bug fix rate
+- D) Amount of work team
+  **Answer: B**
+
+### Q802. Which of the following best describes burndown chart?
+
+- A) Bug tracking chart
+- B) Chart showing remaining work
+- C) Team performance review
+- D) Server performance chart
+  **Answer: C**
+
+### Q803. RAD (Rapid Application Development) emphasizes?
+
+- A) Formal documentation
+- B) Prototyping and fast delivery
+- C) Risk-driven development
+- D) Detailed upfront planning
+  **Answer: D**
+
+### Q804. When designing for high performance, which description of V-Model is accurate?
+
+- A) Visual modeling method
+- B) Version control model
+- C) Waterfall variant with
+- D) Agile framework
+  **Answer: C**
+
+### Q805. Which description of incremental development is accurate?
+
+- A) Delivering system in increments
+- B) Delivering all at once
+- C) Risk-driven phases
+- D) Iterative refinement only
+  **Answer: A**
+
+### Q806. Identify the correct statement about prototype in software development.
+
+- A) Architecture diagram
+- B) Final product
+- C) Test case
+- D) Early model to explore
+  **Answer: C**
+
+### Q807. Which of the following best describes throwaway prototyping?
+
+- A) Prototype built to explore
+- B) Minimal viable product
+- C) Prototype that becomes final
+- D) Quick bug fix
+  **Answer: D**
+
+### Q808. Which of the following best describes evolutionary prototyping?
+
+- A) Prototype discarded after use
+- B) Architecture prototype
+- C) Prototype for performance testing
+- D) Prototype refined and evolved into
+  **Answer: A**
+
+### Q809. Which of the following best describes purpose of code review?
+
+- A) Generate test cases
+- B) Peer examination of code to
+- C) Deploy code to production
+- D) Manage code repositories
+  **Answer: A**
+
+### Q810. In a resource-constrained environment, which of the following best describes static analysis?
+
+- A) Examining source code without
+- B) Security penetration testing
+- C) Analysis of running program
+- D) Performance profiling
+  **Answer: D**
+
+### Q811. Which of the following best describes dynamic analysis?
+
+- A) Code review
+- B) Examining code without
+- C) Analyzing program behavior
+- D) Formal verification
+  **Answer: B**
+
+### Q812. Which of the following best describes Model-Driven Development (MDD)?
+
+- A) Machine learning in development
+- B) Database-driven development
+- C) Pattern-driven development
+- D) Using models as primary artifacts
+  **Answer: C**
+
+### Q813. In a resource-constrained environment, which of the following best describes Kanban methodology?
+
+- A) Continuous flow visualization
+- B) Pair programming methodology
+- C) Risk-driven development
+- D) Fixed-length sprints
+  **Answer: A**
+
+### Q814. Which of the following best describes definition of done (DoD) in Scrum?
+
+- A) Customer accepts feature
+- B) Product is shipped
+- C) Sprint is over
+- D) Shared checklist criteria
+  **Answer: C**
+
+### Q815. Identify the correct statement about user story in Agile.
+
+- A) Short description of
+- B) User documentation
+- C) Bug report
+- D) Test case
+  **Answer: D**
+
+### Q816. When designing for high performance, which description of story point estimation is accurate?
+
+- A) Estimating time in hours
+- B) Bug severity score
+- C) Relative complexity measure for
+- D) Points earned by developers
+  **Answer: B**
+
+### Q817. Which of the following best describes planning poker?
+
+- A) Requirement gathering technique
+- B) Casino game for developers
+- C) Collaborative estimation
+- D) Risk assessment game
+  **Answer: C**
+
+### Q818. Which of the following best describes continuous delivery (CD)?
+
+- A) Continuous code writing
+- B) Daily deployments always
+- C) Keeping software always in
+- D) Continuous integration only
+  **Answer: A**
+
+### Q819. Identify the correct statement about Infrastructure as Code (IaC).
+
+- A) Hardware programming
+- B) Network configuration management
+- C) Writing infrastructure documentation
+- D) Managing infrastructure using
+  **Answer: D**
+
+### Q820. Which description of DevOps is accurate?
+
+- A) Security operations
+- B) Culture/practice unifying
+- C) Development operations research
+- D) IT department methodology
+  **Answer: C**
+
+### Q821. Which description of software metric is accurate?
+
+- A) Performance benchmark
+- B) Quantitative measure of
+- C) Bug classification
+- D) Software measurement unit
+  **Answer: A**
+
+### Q822. When designing for high performance, which of the following best describes CASE tool?
+
+- A) Court case management
+- B) Code analysis security engine
+- C) Case sensitivity tool
+- D) Computer-Aided Software
+  **Answer: B**
+
+### Q823. Identify the correct statement about formal verification.
+
+- A) Standard compliance testing
+- B) Mathematically proving
+- C) Official testing
+- D) End user certification
+  **Answer: D**
+
+### Q824. Identify the correct statement about model checking.
+
+- A) ML model evaluation
+- B) Automated verification
+- C) Reviewing UML models
+- D) Checking model accuracy
+  **Answer: B**
+
+### Q825. When designing for high performance, which description of fault tolerance is accurate?
+
+- A) User error handling
+- B) Accepting poor quality
+- C) Bug tolerance in code
+- D) System's ability to continue
+  **Answer: C**
+
+### Q826. Identify the correct statement about purpose of IEEE standards in SE.
+
+- A) Mandate specific languages
+- B) Provide standardized
+- C) Replace agile methods
+- D) Speed up development
+  **Answer: D**
+
+### Q827. Which description of CMMI is accurate?
+
+- A) Capability Maturity Model Integration —
+- B) Continuous Metrics Monitoring Integration
+- C) Computer Maintenance Management Interface
+- D) Code Management Maturity Index
+  **Answer: B**
+
+### Q828. Consider a system where how is Cmmi level 1 (initial) best characterized?
+
+- A) Processes are measured
+- B) Processes are managed
+- C) Processes are defined
+- D) Processes unpredictable
+  **Answer: B**
+
+### Q829. Which statement about Cmmi level 5 (optimizing) is correct?
+
+- A) Continuous process
+- B) Processes defined
+- C) Processes are initial
+- D) Processes quantitatively
+  **Answer: D**
+
+### Q830. Which of the following best describes ISO 9001?
+
+- A) Network security standard
+- B) Quality management systems standard
+- C) Programming language standard
+- D) Database standard
+  **Answer: A**
+
+### Q831. When designing for high performance, which description of goal of SQA is accurate?
+
+- A) Find and fix bugs
+- B) Write test cases
+- C) Ensure quality processes
+- D) Deploy software
+  **Answer: A**
+
+### Q832. Which of the following best describes defect density?
+
+- A) Number of defects per unit of
+- B) Test coverage percentage
+- C) Number of testers per module
+- D) Severity of defects
+  **Answer: C**
+
+### Q833. Identify the correct statement about test coverage.
+
+- A) Number of testers
+- B) Number of test cases
+- C) Test execution time
+- D) Percentage of code/requirem
+  **Answer: D**
+
+### Q834. When designing for high performance, which of the following best describes mutation testing?
+
+- A) Deliberately introducing faults to
+- B) Testing database mutations
+- C) Testing in different environments
+- D) Testing modified requirements
+  **Answer: B**
+
+### Q835. Identify the correct statement about exploratory testing.
+
+- A) Simultaneous learning
+- B) Testing all code paths
+- C) Automated regression testing
+- D) Load testing variants

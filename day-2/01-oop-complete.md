@@ -1,4 +1,4 @@
-# Day 2 — Object-Oriented Programming (6 Items) + GUI
+# Day 2 — Object-Oriented Programming (98 Items) + GUI
 
 ## 1. OOP Principles
 
@@ -1142,3 +1142,791 @@ setBounds(x, y, w, h) → absolute positioning
 setLayout(null) → manual layout
 add(component) → add to container
 ```
+
+
+## Practice Questions (from Question Bank)
+
+### Q254. Child class redefining parent method is called:?
+
+- A) Encapsulation
+- B) Abstraction
+- C) Overriding
+- D) Overloading
+  **Answer: C**
+
+### Q255. In a resource-constrained environment, abstract class vs Interface in Java:?
+
+- A) No difference
+- B) Interface can be instantiated
+- C) Abstract supports multiple
+- D) Abstract can have concrete methods
+  **Answer: D**
+
+### Q256. Private access modifier makes field accessible:?
+
+- A) Package only
+- B) Everywhere
+- C) Subclasses only
+- D) Within its own class only
+  **Answer: D**
+
+### Q257. 'finally' block guarantees:?
+
+- A) Always runs
+- B) Runs only if exception thrown
+- C) Runs only if no exception
+- D) Runs before try block
+  **Answer: A**
+
+### Q258. When designing for high performance, how is Single responsibility principle best characterized?
+
+- A) One method per class
+- B) Class has only one reason to change
+- C) One inheritance level
+- D) One class per file
+  **Answer: B**
+
+### Q259. How is Filled diamond in uml best characterized?
+
+- A) Simple association
+- B) Composition: child cannot exist
+- C) Child exists without parent
+- D) Interface implementation
+  **Answer: B**
+
+### Q260. Compile-time polymorphism is achieved by:?
+
+- A) Dynamic dispatch
+- B) Method overriding
+- C) Method overloading
+- D) Late binding
+  **Answer: C**
+
+### Q261. In a resource-constrained environment, java keyword to call parent constructor:?
+
+- A) base
+- B) this
+- C) super
+- D) parent
+  **Answer: C**
+
+### Q262. Singleton pattern ensures:?
+
+- A) Thread-safe instances always
+- B) No instances
+- C) One instance only
+- D) Multiple instances
+  **Answer: C**
+
+### Q263. ArrayIndexOutOfBoundsException is thrown when:?
+
+- A) Array is null
+- B) Index is out of valid range
+- C) Array type mismatch
+- D) Array is too large
+  **Answer: B**
+
+### Q264. Consider a system where mVC Controller is responsible for:?
+
+- A) Storing data
+- B) Displaying UI
+- C) Database queries
+- D) Handling input and
+  **Answer: D**
+
+### Q265. Encapsulation primarily protects:?
+
+- A) Method overloading
+- B) Data integrity by
+- C) Inheritance chain
+- D) Object instantiation
+  **Answer: B**
+
+### Q266. @Override annotation in Java indicates:?
+
+- A) Method is overloaded
+- B) Method is abstract
+- C) Method overrides a parent
+- D) Method is static
+  **Answer: C**
+
+### Q267. When designing for high performance, open/Closed Principle states classes should be:?
+
+- A) Open to modification, closed to extension
+- B) Both open to modification and extension
+- C) Open to extension, closed to modification
+- D) Closed to both
+  **Answer: A**
+
+### Q268. Which of the following best describes n abstract method?
+
+- A) Method with empty body {}
+- B) Static method
+- C) Private method
+- D) Method declared without
+  **Answer: D**
+
+### Q269. Which OOP concept hides implementation details?
+
+- A) Polymorphism
+- B) Encapsulation
+- C) Inheritance
+- D) Abstraction
+  **Answer: B**
+
+### Q270. In a resource-constrained environment, a class cannot be instantiated if it is:?
+
+- A) Public
+- B) Abstract
+- C) Static
+- D) Final and public
+  **Answer: B**
+
+### Q271. Multiple inheritance in Java is achieved through:?
+
+- A) Implementing multiple interfaces
+- B) Extending multiple classes
+- C) Using 'super' multiple times
+- D) Abstract classes
+  **Answer: A**
+
+### Q272. Identify the correct statement about n object.
+
+- A) Static variable
+- B) Instance of a class
+- C) Blueprint of a class
+- D) Abstract method
+  **Answer: B**
+
+### Q273. Consider a system where constructor has which characteristics?
+
+- A) Must be public
+- B) Same name as class, no return type
+- C) Has return type void
+- D) Can be abstract
+  **Answer: B**
+
+### Q274. Which of the following best describes destructor used for?
+
+- A) Free resources when
+- B) Implement interfaces
+- C) Create objects
+- D) Override methods
+  **Answer: A**
+
+### Q275. 'protected' access modifier allows access to:?
+
+- A) Different packages only
+- B) Same class only
+- C) Same package and subclasses
+- D) Any class
+  **Answer: C**
+
+### Q276. In a resource-constrained environment, liskov Substitution Principle states:?
+
+- A) Classes should be closed to extension
+- B) Subclass can replace parent without
+- C) Interfaces should be small
+- D) Dependencies should be injected
+  **Answer: B**
+
+### Q277. Interface Segregation Principle states:?
+
+- A) Use one large interface
+- B) Clients should not depend on
+- C) Interfaces cannot have methods
+- D) Interfaces must be public
+  **Answer: B**
+
+### Q278. Dependency Inversion Principle states:?
+
+- A) High-level modules depend on low-level
+- B) Depend on abstractions not concretions
+- C) Classes depend on all other classes
+- D) Inject dependencies at compile time
+  **Answer: B**
+
+### Q279. When designing for high performance, factory pattern belongs to which category?
+
+- A) Architectural
+- B) Structural
+- C) Creational
+- D) Behavioural
+  **Answer: C**
+
+### Q280. Observer pattern belongs to which category?
+
+- A) Creational
+- B) Architectural
+- C) Behavioural
+- D) Structural
+  **Answer: C**
+
+### Q281. Decorator pattern belongs to which category?
+
+- A) Structural
+- B) Concurrency
+- C) Behavioural
+- D) Creational
+  **Answer: A**
+
+### Q282. Identify the correct statement about difference between aggregation and composition.
+
+- A) Aggregation uses interfaces
+- B) No difference
+- C) Composition: child can exist
+- D) Aggregation: child can exist
+  **Answer: D**
+
+### Q283. Which exception type does NOT need to be caught or declared (unchecked)?
+
+- A) RuntimeException
+- B) ClassNotFoundException
+- C) IOException
+- D) SQLException
+  **Answer: A**
+
+### Q284. What does 'this' keyword refer to in Java/C++?
+
+- A) Next object to be created
+- B) Current object instance
+- C) Parent class
+- D) Static context
+  **Answer: B**
+
+### Q285. Which of the following best describes polymorphism literally meaning?
+
+- A) Many classes
+- B) Many parents
+- C) Many methods
+- D) Many forms/shapes — one
+  **Answer: D**
+
+### Q286. Dynamic/runtime polymorphism is achieved through:?
+
+- A) Interface default methods
+- B) Method overloading
+- C) Method overriding with
+- D) Static methods
+  **Answer: C**
+
+### Q287. Which design pattern separates object construction from representation?
+
+- A) Factory
+- B) Singleton
+- C) Builder
+- D) Prototype
+  **Answer: C**
+
+### Q288. Consider a system where uML 'is-a' relationship is represented by:?
+
+- A) Composition
+- B) Inheritance/Generalization
+- C) Association
+- D) Aggregation
+  **Answer: B**
+
+### Q289. UML 'has-a' relationship (loosely) is:?
+
+- A) Aggregation
+- B) Realization
+- C) Inheritance
+- D) Dependency
+  **Answer: A**
+
+### Q290. Which of the following best describes late binding?
+
+- A) Binding at compile time
+- B) Method call resolved at
+- C) Binding in constructor
+- D) Binding in static initializer
+  **Answer: B**
+
+### Q291. Which keyword prevents a class from being subclassed in Java?
+
+- A) static
+- B) final
+- C) abstract
+- D) sealed
+  **Answer: B**
+
+### Q292. Identify the correct statement about checked exception in Java.
+
+- A) Exception must be caught
+- B) Exception compiler doesn't check
+- C) Exception from null pointers
+- D) Exception only in runtime
+  **Answer: A**
+
+### Q293. Which of the following best describes DRY principle?
+
+- A) Delete Redundant Years
+- B) Data Retrieval Yields
+- C) Don't Repeat Yourself —
+- D) Dynamic Runtime Yield
+  **Answer: C**
+
+### Q294. Which description of n interface in Java primarily used for is accurate?
+
+- A) Creating objects
+- B) Defining a contract that
+- C) Storing data
+- D) Replacing abstract
+  **Answer: B**
+
+### Q295. Static methods in a class:?
+
+- A) Belong to the class not instances
+- B) Are always abstract
+- C) Can access instance variables
+- D) Must be private
+  **Answer: A**
+
+### Q296. Identify the correct statement about n inner class.
+
+- A) Abstract class
+- B) Class with private constructor
+- C) Class defined within another class
+- D) Class with no methods
+  **Answer: C**
+
+### Q297. Which exception is thrown when calling method on null reference?
+
+- A) ArrayIndexOutOfBoundsException
+- B) ClassCastException
+- C) NullPointerException
+- D) StackOverflowError
+  **Answer: C**
+
+### Q298. Which description of method chaining is accurate?
+
+- A) Calling overloaded methods
+- B) Calling methods sequentially
+- C) Overriding multiple methods
+- D) Inheriting methods
+  **Answer: B**
+
+### Q299. Which pattern notifies multiple objects when state changes?
+
+- A) Command
+- B) Factory
+- C) Observer
+- D) Singleton
+  **Answer: C**
+
+### Q300. In a resource-constrained environment, facade pattern purpose:?
+
+- A) Converts interface to another
+- B) Controls single instance
+- C) Provides simplified interface to
+- D) Adds functionality to objects
+  **Answer: C**
+
+### Q301. Adapter pattern purpose:?
+
+- A) Converts incompatible
+- B) Builds complex objects step by
+- C) Creates object families
+- D) Clones objects
+  **Answer: D**
+
+### Q302. Which description of constructor overload is accurate?
+
+- A) Constructor calling another class
+- B) Two constructors with same parameters
+- C) Constructor that returns value
+- D) Multiple constructors with different
+  **Answer: D**
+
+### Q303. In a resource-constrained environment, which description of copy constructor is accurate?
+
+- A) Constructor that creates new object
+- B) Default constructor
+- C) Constructor that copies parent class
+- D) Constructor with no parameters
+  **Answer: A**
+
+### Q304. Which description of purpose of a getter method is accurate?
+
+- A) Validates input data
+- B) Deletes object
+- C) Returns private field value
+- D) Sets private field value
+  **Answer: C**
+
+### Q305. Which of the following best describes encapsulation's relationship to getters/setters?
+
+- A) Fields are private
+- B) Getters/setters are not related
+- C) Only one of the two is needed
+- D) Setters must be public
+  **Answer: A**
+
+### Q306. Which principle says 'program to an interface, not an implementation'?
+
+- A) Liskov Substitution
+- B) Open/Closed
+- C) Dependency Inversion
+- D) Single Responsibility
+  **Answer: A**
+
+### Q307. Which description of static variable in OOP is accurate?
+
+- A) Variable only in static methods
+- B) Variable that cannot change
+- C) Variable shared across all instances of a class
+- D) Variable initialized at runtime
+  **Answer: D**
+
+### Q308. Template Method pattern:?
+
+- A) Creates objects without specifying class
+- B) Wraps objects to add behavior
+- C) Manages single instance
+- D) Defines skeleton algorithm in base class
+  **Answer: C**
+
+### Q309. When designing for high performance, strategy pattern allows:?
+
+- A) Logging all method calls
+- B) Selecting algorithm at runtime
+- C) Creating object hierarchies
+- D) Single algorithm fixed at compile time
+  **Answer: A**
+
+### Q310. Command pattern encapsulates:?
+
+- A) Object creation logic
+- B) Database queries
+- C) Requests as objects
+- D) UI rendering
+  **Answer: B**
+
+### Q311. Which of the following best describes object composition over inheritance?
+
+- A) Avoid using objects
+- B) Always use inheritance
+- C) Build complex behavior by
+- D) Use abstract classes only
+  **Answer: A**
+
+### Q312. Consider a system where in Java, all classes implicitly extend:?
+
+- A) AbstractClass
+- B) Object class
+- C) Class class
+- D) Nothing
+  **Answer: C**
+
+### Q313. Which of the following best describes purpose of toString() method in Java?
+
+- A) Compares two objects
+- B) Returns string representatio
+- C) Converts object to integer
+- D) Clones an object
+  **Answer: D**
+
+### Q314. Which description of equals() method used for in Java is accurate?
+
+- A) Converts to boolean
+- B) Compares memory addresses only
+- C) Checks logical equality of objects
+- D) Assigns values
+  **Answer: A**
+
+### Q315. Which description of difference between == and .equals() in Java is accurate?
+
+- A) No difference
+- B) == compares references
+- C) Both compare content
+- D) .equals compares references
+  **Answer: B**
+
+### Q316. Which description of multilevel inheritance is accurate?
+
+- A) Interface extends interface
+- B) Class inherits from multiple classes
+- C) Class implements multiple interfaces
+- D) Chain: A extends B extends C
+  **Answer: C**
+
+### Q317. Identify the correct statement about hierarchical inheritance.
+
+- A) Abstract class chain
+- B) One child, multiple parents
+- C) Interface hierarchy
+- D) One parent, multiple child classes
+  **Answer: A**
+
+### Q318. When designing for high performance, prototype pattern purpose:?
+
+- A) Creates new objects by cloning
+- B) Adds behavior to objects
+- C) Defines family of algorithms
+- D) Ensures single instance
+  **Answer: B**
+
+### Q319. Which description of n access specifier is accurate?
+
+- A) Variable type declaration
+- B) Keyword controlling
+- C) Method return type
+- D) Loop control keyword
+  **Answer: D**
+
+### Q320. Which OOP feature allows same method name to behave differently in different classes?
+
+- A) Polymorphism
+- B) Encapsulation
+- C) Inheritance
+- D) Abstraction
+  **Answer: A**
+
+### Q321. Which of the following best describes virtual function in C++?
+
+- A) Private abstract function
+- B) Function with no body
+- C) Function in base class
+- D) Function that is never called
+  **Answer: B**
+
+### Q322. What does 'new' return in Java?
+
+- A) Null always
+- B) Primitive value
+- C) Reference to newly
+- D) Object on stack
+  **Answer: C**
+
+### Q323. Which description of garbage collection is accurate?
+
+- A) Manual memory freeing
+- B) Clearing arrays
+- C) Automatic reclamation of
+- D) Deleting variables
+  **Answer: A**
+
+### Q324. Identify the correct statement about purpose of an interface's default method (Java 8+).
+
+- A) Provide default implementation
+- B) Force overriding
+- C) Replace abstract methods
+- D) Enable multiple inheritance of
+  **Answer: D**
+
+### Q325. Identify the correct statement about coupling in OOP.
+
+- A) Depth of inheritance tree
+- B) Number of methods in a class
+- C) Degree to which classes depend on each other
+- D) Degree to which a class is self-contained
+  **Answer: A**
+
+### Q326. Identify the correct statement about cohesion in OOP.
+
+- A) Depth of inheritance
+- B) Degree to which elements within a
+- C) Number of parameters per method
+- D) How classes depend on each other
+  **Answer: B**
+
+### Q327. Consider a system where high cohesion and low coupling is considered:?
+
+- A) Good design principle
+- B) Only relevant for databases
+- C) Bad design
+- D) Only for procedural
+  **Answer: C**
+
+### Q328. Identify the correct statement about n anonymous class in Java.
+
+- A) Static inner class
+- B) Class defined and instantiated at
+- C) Abstract class with no methods
+- D) Class with private constructor
+  **Answer: A**
+
+### Q329. Which description of lambda expression in Java is accurate?
+
+- A) Loop construct
+- B) Short anonymous function
+- C) Abstract class shorthand
+- D) Recursive function
+  **Answer: B**
+
+### Q330. In a resource-constrained environment, iterator pattern provides:?
+
+- A) Undo/redo functionality
+- B) Simplified subsystem interface
+- C) Single object creation
+- D) Way to sequentially access
+  **Answer: C**
+
+### Q331. Composite pattern is used to:?
+
+- A) Control object creation
+- B) Convert interfaces
+- C) Add functionality to objects
+- D) Treat individual objects and
+  **Answer: A**
+
+### Q332. Which description of n enumeration (enum) in Java is accurate?
+
+- A) Abstract class variant
+- B) Type with fixed set of named
+- C) Array of objects
+- D) Generic type parameter
+  **Answer: B**
+
+### Q333. Which of the following best describes purpose of the 'interface' keyword in OOP languages?
+
+- A) Defines contract of methods a
+- B) Declares constants only
+- C) Extends class hierarchy
+- D) Creates concrete classes
+  **Answer: C**
+
+### Q334. Bridge pattern separates:?
+
+- A) Model from view
+- B) Data from behavior
+- C) Input from output
+- D) Abstraction from
+  **Answer: A**
+
+### Q335. Proxy pattern provides:?
+
+- A) Object composition
+- B) Notification mechanism
+- C) Alternative algorithm
+- D) Placeholder controlling
+  **Answer: B**
+
+### Q336. Which of the following best describes difference between a class and an object?
+
+- A) Classes are runtime
+- B) Object is blueprint
+- C) No difference
+- D) Class is blueprint/template
+  **Answer: C**
+
+### Q337. Which of the following best describes role of 'super' keyword in inheritance?
+
+- A) References static context
+- B) References current object
+- C) Creates new object
+- D) References parent class constructor
+  **Answer: A**
+
+### Q338. Which description of method hiding in Java is accurate?
+
+- A) Using @Override annotation
+- B) Making methods private
+- C) Static method in subclass hides
+- D) Overriding instance methods
+  **Answer: B**
+
+### Q339. What does it mean for a method to be 'overridden' correctly?
+
+- A) Different name, same parameters
+- B) Same name and parameters in subclass
+- C) Private method in subclass
+- D) Same name, different parameters
+  **Answer: A**
+
+### Q340. Can an abstract class have a constructor?
+
+- A) Only default constructor
+- B) Yes, called by subclass
+- C) No, never
+- D) Only if no abstract methods
+  **Answer: A**
+
+### Q341. Which of the following best describes difference between an interface and an abstract class?
+
+- A) Abstract class can have
+- B) Abstract class cannot be
+- C) Both are identical
+- D) Interface can have state
+  **Answer: C**
+
+### Q342. When designing for high performance, sOLID is an acronym for which 5 principles?
+
+- A) Single, Overriding, Layered, Integration, Deployment
+- B) Single, Open, Liskov, Interface, Dependency
+- C) Simple, Open, Large, Inherited, Dynamic
+- D) Stable, Object, Linked, Interface, Design
+  **Answer: A**
+
+### Q343. What does 'is-a' relationship mean in OOP?
+
+- A) Has a field of another type
+- B) Object holds reference to another
+- C) Inheritance relationship: subclass
+- D) Interface implementation
+  **Answer: B**
+
+### Q344. What does 'has-a' relationship mean?
+
+- A) Method overriding
+- B) Interface implementation
+- C) Inheritance
+- D) Composition/Aggregation:
+  **Answer: C**
+
+### Q345. What exception is thrown when casting object to incompatible type?
+
+- A) ArrayIndexOutOfBoundsException
+- B) ClassCastException
+- C) IllegalArgumentException
+- D) NullPointerException
+  **Answer: B**
+
+### Q346. Identify the correct statement about purpose of 'instanceof' operator in Java.
+
+- A) Returns class of object
+- B) Checks if object is instance
+- C) Creates new instance
+- D) Compares two instances
+  **Answer: B**
+
+### Q347. Can interfaces have fields/variables in Java?
+
+- A) Yes, but implicitly public
+- B) Yes, any type of field
+- C) No fields allowed
+- D) Only private fields
+  **Answer: C**
+
+### Q348. Identify the correct statement about chain of responsibility pattern.
+
+- A) Method call chain
+- B) Sequence of objects where
+- C) Chain of inheritance
+- D) Loop through handlers
+  **Answer: C**
+
+### Q349. Identify the correct statement about State pattern.
+
+- A) Freezes object state
+- B) Synchronizes state across threads
+- C) Allows object to change behavior when
+- D) Stores object state in database
+  **Answer: A**
+
+### Q350. Identify the correct statement about refactoring in OOP.
+
+- A) Rewriting code from scratch
+- B) Adding new features
+- C) Fixing bugs
+- D) Restructuring existing
+  **Answer: C**
+
+### Q351. When designing for high performance, identify the correct statement about Null Object pattern.
+
+- A) Checks for null references
+- B) Returns null instead of object
+- C) Provides default object instead
+- D) Cleans null pointers
+  **Answer: A**
+
