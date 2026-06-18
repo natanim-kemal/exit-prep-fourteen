@@ -1,172 +1,80 @@
-# Day 12 — Fundamentals of AI Complete Theory (6 Items)
+# Artificial Intelligence — Study Notes
 
-## LO1: Intelligent Agents & AI Systems
+## 1. AI Fundamentals
 
-### 1.1 What is AI?
-- **AI**: development of machines that can perform tasks that typically **require human intelligence**
-- NOT: physical tasks only, simple/repetitive tasks only, or controlled-laboratory-only tasks
+**AI (Artificial Intelligence)**: machines performing tasks that require human intelligence (reasoning, learning, perception, problem-solving). AI is a rapidly evolving field requiring continuous learning to stay updated.
 
-### 1.2 AI System Components
-- AI system composed of: **Agent** and **Environment**
-- **Agent**: anything that **perceives** environment through **sensors** and **acts** through **effectors/actuators**
-- **Environment**: external context where agent operates
+**Branches of AI**:
+- **Machine Learning**: algorithms that improve through experience/data
+- **Deep Learning**: neural networks with many layers
+- **Natural Language Processing (NLP)**: understanding/ generating human language
+- **Computer Vision**: interpreting visual information
+- **Robotics**: intelligent agents in physical world
+- **Expert Systems**: rule-based knowledge representation
 
-### 1.3 Agent Types
-| Type | Description | Example |
-|------|-------------|---------|
-| **Simple Reflex** | Responds to current percept only | Thermostat |
-| **Model-Based** | Maintains internal state/model | Robot with memory |
-| **Goal-Based** | Acts to achieve goals | Route planner |
-| **Utility-Based** | Maximizes utility function | Stock trader |
-| **Learning** | Improves over time | Game AI |
+## 2. Intelligent Agents
 
-### 1.4 PEAS
-- **P**erformance, **E**nvironment, **A**ctuators, **S**ensors
+An agent perceives its environment through sensors and acts through actuators.
 
----
+**Types by capability**:
+- **Simple Reflex Agent**: responds to current percept only; no memory
+- **Model-based Agent**: maintains internal model of the world updated by percepts
+- **Goal-based Agent**: acts to achieve goals; can plan ahead
+- **Utility-based Agent**: maximizes a utility function (preference-based)
+- **Learning Agent**: improves performance over time through experience
 
-## LO2: Search Strategies
+## 3. Problem-Solving & Search
 
-### 2.1 Uninformed vs Informed
-| Aspect | Uninformed (Blind) | Informed (Heuristic) |
-|--------|-------------------|---------------------|
-| Knowledge | No problem-specific info | Uses heuristic h(n) |
-| Example algorithms | BFS, DFS, UCS, Iterative Deepening | A*, Greedy Best-First |
-| Optimality | Varies | With admissible heuristic |
+**Search algorithms**:
+- **Uninformed**: BFS, DFS, Uniform Cost Search — no domain knowledge
+- **Informed**: A*, Greedy Best-First — use heuristic function
 
-### 2.2 A* Search (Exam Priority!)
-- f(n) = **g(n) + h(n)**
-  - g(n) = cost from start to n
-  - h(n) = heuristic estimate from n to goal
-- **Informed** search algorithm
-- **Complete** — finds solution if one exists
-- **Optimal** — guarantees optimality with **admissible** heuristic
-- **Exponential time** complexity in worst case
+**State space representation**: states, actions, transition model, goal test, path cost.
 
-### 2.3 Heuristic Properties
-- **Admissible**: never overestimates (h(n) ≤ true cost)
-- **Consistent**: h(n) ≤ c(n,n') + h(n')
-- Informed search algorithms described as **admissible**
+**Heuristic function**: estimate of cost from current state to goal. Admissible (never overestimates) for optimal A*.
 
-### 2.4 Uniform Cost Search vs Dijkstra
-| UCS | Dijkstra |
-|-----|----------|
-| **Collects nodes in Queue first, then discovers** | Discovers nodes as they come |
-| Single goal detection | All shortest paths from source |
+## 4. Knowledge Representation
 
-### 2.5 Local Search Algorithms
-- For optimization problems
-- **Quality depends heavily on starting point and neighborhood function**
-- NOT guaranteed globally optimal
-- E.g., Hill-climbing, Simulated Annealing, Genetic Algorithms
+**Methods**:
+- **Logical representation**: formal logic (propositional, first-order) — precise but complex
+- **Semantic network**: graph of concepts and relationships (IS-A, HAS-A)
+- **Frame representation**: structured object with slots/attributes
+- **Rule-based**: IF-THEN rules (expert systems)
+- **Production rules**: condition-action pairs
 
----
+**Frame example**: Representing "Samuel is a player, age 25, height 1.98, club Manchester, lives in England" as a frame with slots (Name, Age, Height, Club, Residence).
 
-## LO3: Knowledge Representation & Expert Systems
+## 5. Natural Language Processing (NLP)
 
-### 3.1 Knowledge Representation
-| Method | Description |
-|--------|-------------|
-| **Propositional Logic** | Facts with connectives (AND, OR, NOT) |
-| **First-Order Logic** | Objects, relations, quantifiers |
-| **Production Rules** | IF-THEN rules |
-| **Semantic Networks** | Graph of concepts & relationships |
-| **Frames** | OOP-like with slots |
+**Key tasks**:
+- **Tokenization**: breaking text into words/tokens
+- **POS Tagging**: identifying parts of speech
+- **Named Entity Recognition (NER)**: identifying names, places, dates
+- **Sentiment Analysis**: determining emotional tone
+- **Machine Translation**: translating between languages
 
-### 3.2 Expert Systems
-- Emulates human expert decision-making
-- Components: **Knowledge Base** + **Inference Engine** + UI
-- Uses **laws of logic** to represent knowledge
-- **Forward chaining** (data→conclusion) vs **Backward chaining** (goal→facts)
+**TF-IDF (Term Frequency-Inverse Document Frequency)**: measures term importance in a document relative to a corpus.
 
----
+## 6. Expert Systems
 
-## LO4: Problem Solving, Planning & Game Playing
+Components:
+- **Knowledge Base**: domain facts and rules
+- **Inference Engine**: applies rules to facts (Forward/Backward chaining)
+- **User Interface**: interaction with user
+- **Explanation Module**: explains reasoning
 
-### 4.1 State Space Search
-- Translate problems into **search algorithms** to find ideal solutions
-- States → Actions → Goal test → Path cost
+**Limitations**: knowledge acquisition bottleneck, lack of common sense, brittle (cannot handle novel situations well).
 
-### 4.2 Automatic Planning
-- **Automatic programming**: generating plans with conditionals/loops from logical specifications
-- STRIPS planning language
+## 7. AI Ethics & Challenges
 
-### 4.3 Game Playing
-- **Minimax**: optimal decision in zero-sum games
-- **Alpha-Beta pruning**: optimizes minimax by pruning irrelevant branches
+- **Bias**: AI systems can perpetuate/amplify biases in training data
+- **Transparency**: "black box" problem — difficult to explain decisions
+- **Privacy**: data collection and usage concerns
+- **Safety**: ensuring AI systems behave as intended
+- **Job displacement**: automation affecting employment
 
-### 4.4 Backtracking & CSP
-- **CSP**: variables + domains + constraints
-- **Backtracking search**: DFS with constraint checking
+**Turing Test**: test of machine's ability to exhibit intelligent behavior indistinguishable from a human.
 
----
+## 8. Key Differences
 
-## LO5: ML Basics (From Exam Questions)
-
-### 5.1 ML Types
-- **Supervised**: labeled data (classification, regression)
-- **Unsupervised**: **no labels** (clustering, association)
-- **Reinforcement**: rewards/punishments
-- **Transfer**: knowledge from one task to another
-
-### 5.2 Overfitting (Exam Q4)
-- Model fits training data **too closely**
-- Works well on training, **poorly on new data**
-
-### 5.3 Model Development
-- **Large dataset boosts performance** ✓
-- Training > Test set proportion (70-80% train)
-- No overlap between train and test
-
-### 5.4 Data Mining Process
-**Training → Testing → Evaluation → Deployment**
-
-### 5.5 Association Rule
-- Finds relationships between variables (market basket analysis)
-- Big data analytics technique
-
----
-
-## Exam-Style Q&A (From 14 Actual Questions)
-
-**Q1:** What describes informed search algorithms?
-- a. Complete   b. Consistent   c. **Admissible** ✓   d. Optimal
-
-**Q2:** Correct statement about local search algorithms?
-- a. For convex optimization
-- b. Time complexity independent of size
-- c. **Quality depends on starting point and neighborhood** ✓
-- d. Always globally optimal
-
-**Q3:** Divergence between Dijkstra and UCS?
-- a. UCS optimal, Dijkstra not
-- b. **Dijkstra discovers as they come; UCS collects in Queue first** ✓
-- c. Dijkstra optimal, UCS not
-- d. UCS discovers as they come
-
-**Q4:** Model fits training too closely, poor on new data?
-- a. **Overfitting** ✓   b. Underfitting   c. Underperforming   d. Sweet spot
-
-**Q5:** AI system is composed of?
-- a. **Agent and Environment** ✓   b. Tech & Evolution   c. Data & Info   d. Device & Network
-
-**Q6:** Anything that perceives and acts?
-- a. **Agent** ✓   b. Expert System   c. Intelligence   d. API
-
-**Q7:** Informed, exponential worst-case, guarantees optimality?
-- a. **A\* search** ✓   b. Greedy best-first   c. UCS   d. IDA\*
-
-**Q8:** Algorithm for data without labels?
-- a. Transfer   b. Supervised   c. **Unsupervised** ✓   d. Reinforcement
-
-**Q9:** Correct about AI?
-- a. Physical tasks only   b. Simple tasks only   c. Lab tasks only   d. **Tasks requiring human intelligence** ✓
-
-**Q10:** True about ML model development?
-- a. Focus on test data   b. **Large dataset boosts performance** ✓   c. Overlap train/test   d. Train < test
-
-**Q11:** Generating plans with conditionals/loops from logical specs?
-- a. **Automatic programming** ✓   b. Monitoring   c. Recursive   d. Learning
-
-**Q12:** Correct data mining process?
-- a. **Training → Testing → Evaluation → Deployment** ✓
+**AI vs ML vs Deep Learning**: AI is the broadest (machines mimicking human intelligence). ML is a subset (learning from data). Deep Learning is a subset of ML (neural networks).
